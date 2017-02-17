@@ -1,0 +1,19 @@
+{
+  "name": "canvas-lib",
+  "version": "1.0.0",
+  "description": "es6 library for drawing on canvas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "stephen george",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "live-server": "^1.2.0",
+    "webpack": "^2.2.1"
+  }
+}
