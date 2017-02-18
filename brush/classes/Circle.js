@@ -8,6 +8,10 @@ export default class Circle {
     this.r = r;
   }
 
+  /* ****
+    DESIGN METHODS
+  **** */
+  // draw circle to canvas with fill colour (no stroke)
   draw(fillStyle = '#FFC0CB') {
     this.ctx.beginPath();
     this.ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
@@ -15,7 +19,7 @@ export default class Circle {
     this.ctx.fill();
     return this;
   }
-
+  // draw circle to canvas with stroke (no fill)
   outline({ weight = 2, colour = '#808080' } = {}) {
     this.ctx.beginPath();
     this.ctx.arc(this.x, this.y, this.r + (weight / 2), 0, Math.PI * 2);

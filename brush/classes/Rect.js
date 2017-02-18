@@ -1,7 +1,5 @@
 'use strict';
 
-import rect from '../functions/rect';
-
 export default class Rect {
   constructor(ctx, x, y, width, height) {
     this.ctx = ctx;
@@ -11,12 +9,16 @@ export default class Rect {
     this.height = height;
   }
 
+  /* ****
+    DESIGN METHODS
+  **** */
+  // draw rectangle to canvas with fill colour (no stroke)
   draw(fillStyle = '#FFC0CB') {
     this.ctx.fillStyle = fillStyle;
     this.ctx.fillRect(this.x, this.y, this.width, this.height);
     return this;
   }
-
+  // draw rectangle to canvas with stroke (no fill)
   outline({weight = 2, colour = '#808080'} = {}) {
     this.ctx.lineWidth = weight;
     this.ctx.strokeStyle = colour;

@@ -9,6 +9,10 @@ export default class Line {
     this.yTo = yTo;
   }
 
+  /* ****
+    DESIGN METHODS
+  **** */
+  // draw line to canvas
   draw({weight = 2, colour = '#808080'} = {}) {
     this.ctx.beginPath();
     this.ctx.lineWidth = weight;
@@ -19,6 +23,10 @@ export default class Line {
     return this;
   }
 
+  /* ****
+    DATA METHODS
+  **** */
+  // get length of line (function is called 'dist()' as 'length' is a reserved word in JS)
   dist() {
     let xDiff = Math.abs(this.xFrom - this.xTo);
     let yDiff = Math.abs(this.yFrom - this.yTo);
