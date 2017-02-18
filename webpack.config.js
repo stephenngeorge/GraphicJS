@@ -28,7 +28,8 @@ module.exports = {
       compress: {warnings: false},
       beautify: false,
       mangle: true,
-      comments: true
+      comments: true,
+      sourceMap: true
     })
   ]
 }
