@@ -16,7 +16,19 @@ export default class TraingleR {
     this.ctx.lineTo(this.xPos + this.base, this.yPos + this.height);
     this.ctx.fillStyle = fillStyle;
     this.ctx.fill();
+    return this;
   }
 
   // outline...
+  outline({weight = 2, colour = '#808080'} = {}) {
+    this.ctx.beginPath();
+    this.ctx.moveTo(this.xPos, this.yPos);
+    this.ctx.lineTo(this.xPos, this.yPos + this.height);
+    this.ctx.lineTo(this.xPos + this.base, this.yPos + this.height);
+    this.ctx.lineWidth = weight;
+    this.ctx.strokeStyle = colour;
+    this.ctx.closePath();
+    this.ctx.stroke();
+    return this;
+  }
 }
