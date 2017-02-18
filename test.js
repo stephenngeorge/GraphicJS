@@ -1,6 +1,6 @@
 'use strict';
 
-import { bgSolid, rect, circle } from './brush';
+import { bgSolid, rect, circle, line, triangleR } from './brush';
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
@@ -8,3 +8,6 @@ const ctx = canvas.getContext('2d');
 // global variables
 const width = canvas.width;
 const height = canvas.height;
+
+bgSolid(canvas);
+triangleR(ctx).draw('pink');
