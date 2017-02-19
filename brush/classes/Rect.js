@@ -25,4 +25,15 @@ export default class Rect {
     this.ctx.strokeRect(this.x - (weight / 2), this.y - (weight / 2), this.width + weight, this.height + weight);
     return this;
   }
+
+  /* ****
+    DATA METHODS
+  **** */
+  // get area of rectangle
+  area() {
+    return this.width * this.height;
+  }
+  perim() {
+    return 2 * (this.width + this.height);
+  }
 }

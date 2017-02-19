@@ -11,5 +11,4 @@ const height = canvas.height;
 
 
 brush.bgSolid(canvas);
-let edge = brush.line(ctx, 50, 50, 200, 200).draw({weight: 1, colour: 'black'});
-console.log(edge.xAngle('degrees'));
+let edge = brush.line(ctx, 150, 20, 32, 50).draw({weight: 2, colour: 'black'});
