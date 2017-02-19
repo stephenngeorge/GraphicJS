@@ -40,4 +40,34 @@ export default class TraingleR {
   hyp() {
     return Math.sqrt((this.base * this.base) + (this.height * this.height));
   }
+  // get area of the triangle
+  area() {
+    return (this.height * this.base) * .5;
+  }
+  // get the perimeter of the triangle
+  perim() {
+    return this.base + this.height + this.hyp();
+  }
+  // get the three angels of the triangle, returned as an array
+  angles(mode = 'rad') {
+    let units = mode.toUpperCase();
+    let rightAngle = '', firstAngle = '', secondAngle = '';
+    if (units === 'RAD' || units === 'RADS' || units === 'R' || units === 'RADIANS') {
+      rightAngle = Math.PI / 2;
+      firstAngle = Math.asin(this.base / this.hyp());
+      secondAngle = Math.asin(this.height / this.hyp());
+    }
+    else if (units === 'DEG' || units === 'DEGS' || units === 'D' || units === 'DEGREES') {
+      rightAngle = (Math.PI / 2) * (180 / Math.PI);
+      firstAngle = (Math.asin(this.base / this.hyp()) * (180 / Math.PI));
+      secondAngle = (Math.asin(this.height / this.hyp()) * (180 / Math.PI));
+    }
+    else {
+      return {
+        status: 'ERROR',
+        message: 'the mode you have passed is not recognised, please specify "deg" or "rad"'
+      }
+    }
+    return [rightAngle, firstAngle, secondAngle];
+    }
 }

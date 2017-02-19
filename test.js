@@ -11,4 +11,6 @@ const height = canvas.height;
 
 
 brush.bgSolid(canvas);
-let edge = brush.line(ctx, 150, 20, 32, 50).draw({weight: 2, colour: 'black'});
+
+let pyramid = brush.triangleR(ctx, 100, 100, 200, 100).outline();
+console.log(pyramid.angles('deg'));
