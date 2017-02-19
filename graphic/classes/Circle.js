@@ -22,7 +22,7 @@ export default class Circle {
   // draw circle to canvas with stroke (no fill)
   outline({ weight = 2, colour = '#808080' } = {}) {
     this.ctx.beginPath();
-    this.ctx.arc(this.x, this.y, this.r + (weight / 2), 0, Math.PI * 2);
+    this.ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
     this.ctx.lineWidth = weight;
     this.ctx.strokeStyle = colour;
     this.ctx.stroke();

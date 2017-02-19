@@ -22,7 +22,7 @@ export default class Rect {
   outline({weight = 2, colour = '#808080'} = {}) {
     this.ctx.lineWidth = weight;
     this.ctx.strokeStyle = colour;
-    this.ctx.strokeRect(this.x - (weight / 2), this.y - (weight / 2), this.width + weight, this.height + weight);
+    this.ctx.strokeRect(this.x, this.y, this.width, this.height);
     return this;
   }
 

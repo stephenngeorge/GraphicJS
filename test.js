@@ -1,6 +1,6 @@
 'use strict';
 
-import brush from './brush';
+import G from './graphic';
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
@@ -9,8 +9,14 @@ const ctx = canvas.getContext('2d');
 const width = canvas.width;
 const height = canvas.height;
 
+const borders = {
+  weight: 3,
+  colour: '#f1f1f1'
+}
 
-brush.bgSolid(canvas);
+G.bgSolid(canvas, '#808080');
+let ball = G.circle(ctx, width * .5, height * .5, 48).draw('rgba(200, 0, 100, .4)').outline(borders);
+G.rect(ctx, 50, 50, width - 100, height - 100).outline(borders);
 
-let pyramid = brush.triangleR(ctx, 100, 100, 200, 100).outline();
-console.log(pyramid.angles('deg'));
+G.line(ctx, 0, 0, ball.circumf(), ball.circumf()).draw(borders);
+G.line(ctx, width, 0, ball.circumf(), ball.circumf()).draw(borders);
