@@ -79,13 +79,13 @@ function(t,e,i){"use strict";function n(t,e){if(!(t instanceof e))throw new Type
     DESIGN METHODS
   **** */
 // draw circle to canvas with fill colour (no stroke)
-return r(t,[{key:"draw",value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"#FFC0CB";return this.ctx.beginPath(),this.ctx.arc(this.x,this.y,this.r,0,2*Math.PI),this.ctx.fillStyle=t,this.ctx.fill(),this}},{key:"outline",value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},e=t.weight,i=void 0===e?2:e,n=t.colour,r=void 0===n?"#808080":n;return this.ctx.beginPath(),this.ctx.arc(this.x,this.y,this.r+i/2,0,2*Math.PI),this.ctx.lineWidth=i,this.ctx.strokeStyle=r,this.ctx.stroke(),this}}]),t}();e.default=o},/* 1 */
+return r(t,[{key:"draw",value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"#FFC0CB";return this.ctx.beginPath(),this.ctx.arc(this.x,this.y,this.r,0,2*Math.PI),this.ctx.fillStyle=t,this.ctx.fill(),this}},{key:"outline",value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},e=t.weight,i=void 0===e?2:e,n=t.colour,r=void 0===n?"#808080":n;return this.ctx.beginPath(),this.ctx.arc(this.x,this.y,this.r+i/2,0,2*Math.PI),this.ctx.lineWidth=i,this.ctx.strokeStyle=r,this.ctx.stroke(),this}},{key:"area",value:function(){return Math.PI*(this.r*this.r)}},{key:"circumf",value:function(){return Math.PI*this.r*2}}]),t}();e.default=o},/* 1 */
 /***/
 function(t,e,i){"use strict";function n(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(e,"__esModule",{value:!0});var r=function(){function t(t,e){for(var i=0;i<e.length;i++){var n=e[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(t,n.key,n)}}return function(e,i,n){return i&&t(e.prototype,i),n&&t(e,n),e}}(),o=function(){function t(e,i,r,o,s){n(this,t),this.ctx=e,this.xFrom=i,this.yFrom=r,this.xTo=o,this.yTo=s}/* ****
     DESIGN METHODS
   **** */
 // draw line to canvas
-return r(t,[{key:"draw",value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},e=t.weight,i=void 0===e?2:e,n=t.colour,r=void 0===n?"#808080":n;return this.ctx.beginPath(),this.ctx.lineWidth=i,this.ctx.moveTo(this.xFrom,this.yFrom),this.ctx.lineTo(this.xTo,this.yTo),this.ctx.strokeStyle=r,this.ctx.stroke(),this}},{key:"dist",value:function(){var t=Math.abs(this.xFrom-this.xTo),e=Math.abs(this.yFrom-this.yTo),i=t*t+e*e;return Math.sqrt(i)}}]),t}();e.default=o},/* 2 */
+return r(t,[{key:"draw",value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},e=t.weight,i=void 0===e?2:e,n=t.colour,r=void 0===n?"#808080":n;return this.ctx.beginPath(),this.ctx.lineWidth=i,this.ctx.moveTo(this.xFrom,this.yFrom),this.ctx.lineTo(this.xTo,this.yTo),this.ctx.strokeStyle=r,this.ctx.stroke(),this}},{key:"dist",value:function(){var t=Math.abs(this.xFrom-this.xTo),e=Math.abs(this.yFrom-this.yTo),i=t*t+e*e;return Math.sqrt(i)}},{key:"grad",value:function(){var t=Math.abs(this.xFrom-this.xTo),e=Math.abs(this.yFrom-this.yTo);return e/t}},{key:"xAngle",value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"rad",e=t.toUpperCase(),i=this.grad();if("RAD"===e||"R"===e||"RADIANS"===e)return Math.atan(i);if("DEG"===e||"D"===e||"DEGREES"===e){var n=Math.atan(i);return n*(180/Math.PI)}return{status:"ERROR",message:'the mode you have selected is not recognised, please specify "deg" or "rad"'}}}]),t}();e.default=o},/* 2 */
 /***/
 function(t,e,i){"use strict";function n(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(e,"__esModule",{value:!0});var r=function(){function t(t,e){for(var i=0;i<e.length;i++){var n=e[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(t,n.key,n)}}return function(e,i,n){return i&&t(e.prototype,i),n&&t(e,n),e}}(),o=function(){function t(e,i,r,o,s){n(this,t),this.ctx=e,this.x=i,this.y=r,this.width=o,this.height=s}/* ****
     DESIGN METHODS
@@ -101,27 +101,27 @@ Object.defineProperty(e,"__esModule",{value:!0});var r=function(){function t(t,e
 // draw triangle to canvas with fill colour (no stroke)
 return r(t,[{key:"draw",value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"#FFC0CB";return this.ctx.beginPath(),this.ctx.moveTo(this.xPos,this.yPos),this.ctx.lineTo(this.xPos,this.yPos+this.height),this.ctx.lineTo(this.xPos+this.base,this.yPos+this.height),this.ctx.fillStyle=t,this.ctx.fill(),this}},{key:"outline",value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},e=t.weight,i=void 0===e?2:e,n=t.colour,r=void 0===n?"#808080":n;return this.ctx.beginPath(),this.ctx.moveTo(this.xPos,this.yPos),this.ctx.lineTo(this.xPos,this.yPos+this.height),this.ctx.lineTo(this.xPos+this.base,this.yPos+this.height),this.ctx.lineWidth=i,this.ctx.strokeStyle=r,this.ctx.closePath(),this.ctx.stroke(),this}},{key:"hyp",value:function(){return Math.sqrt(this.base*this.base+this.height*this.height)}}]),t}();e.default=o},/* 4 */
 /***/
-function(t,e,i){"use strict";function n(t){return t&&t.__esModule?t:{default:t}}
-// create new rectangle, draw to the given context
-function r(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:42,i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:42,n=arguments.length>3&&void 0!==arguments[3]?arguments[3]:42,r=arguments.length>4&&void 0!==arguments[4]?arguments[4]:42;return new s.default(t,e,i,n,r)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=r;var o=i(2),s=n(o)},/* 5 */
-/***/
-function(t,e,i){"use strict";function n(t){return t&&t.__esModule?t:{default:t}}var r=i(6),o=n(r),s=i(8),u=n(s),h=i(7),l=n(h),c=i(4),a=n(c),f=i(9),d=n(f),v=i(1),y=n(v),x=i(0),g=n(x),b=i(2),p=n(b),P=i(3),w=n(P),_={bgSolid:o.default,line:u.default,circle:l.default,rect:a.default,triangleR:d.default,classes:{Line:y.default,Circle:g.default,Rect:p.default,TriangleR:w.default}};t.exports=_},/* 6 */
+function(t,e,i){"use strict";function n(t){return t&&t.__esModule?t:{default:t}}var r=i(5),o=n(r),s=i(7),u=n(s),h=i(6),a=n(h),l=i(8),c=n(l),f=i(9),d=n(f),v=i(1),y=n(v),g=i(0),x=n(g),b=i(2),p=n(b),P=i(3),w=n(P),_={bgSolid:o.default,line:u.default,circle:a.default,rect:c.default,triangleR:d.default,classes:{Line:y.default,Circle:x.default,Rect:p.default,TriangleR:w.default}};t.exports=_},/* 5 */
 /***/
 function(t,e,i){"use strict";function n(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"#e7e7e7",i=t.getContext("2d");i.fillStyle=e,i.fillRect(0,0,t.width,t.height)}
 // draw fill rectangle full size of canvas, colour default to light grey
-Object.defineProperty(e,"__esModule",{value:!0}),e.default=n},/* 7 */
+Object.defineProperty(e,"__esModule",{value:!0}),e.default=n},/* 6 */
 /***/
 function(t,e,i){"use strict";function n(t){return t&&t.__esModule?t:{default:t}}
 // create new circle, draw to the given context
-function r(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:42,i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:42,n=arguments.length>3&&void 0!==arguments[3]?arguments[3]:21;return new s.default(t,e,i,n)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=r;var o=i(0),s=n(o)},/* 8 */
+function r(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:42,i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:42,n=arguments.length>3&&void 0!==arguments[3]?arguments[3]:21;return new s.default(t,e,i,n)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=r;var o=i(0),s=n(o)},/* 7 */
 /***/
 function(t,e,i){"use strict";function n(t){return t&&t.__esModule?t:{default:t}}
 // create new line, draw to the given context
-function r(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:42,i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:42,n=arguments.length>3&&void 0!==arguments[3]?arguments[3]:126,r=arguments.length>4&&void 0!==arguments[4]?arguments[4]:42;return new s.default(t,e,i,n,r)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=r;var o=i(1),s=n(o)},/* 9 */
+function r(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:42,i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:42,n=arguments.length>3&&void 0!==arguments[3]?arguments[3]:126,r=arguments.length>4&&void 0!==arguments[4]?arguments[4]:42;return new s.default(t,e,i,n,r)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=r;var o=i(1),s=n(o)},/* 8 */
+/***/
+function(t,e,i){"use strict";function n(t){return t&&t.__esModule?t:{default:t}}
+// create new rectangle, draw to the given context
+function r(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:42,i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:42,n=arguments.length>3&&void 0!==arguments[3]?arguments[3]:42,r=arguments.length>4&&void 0!==arguments[4]?arguments[4]:42;return new s.default(t,e,i,n,r)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=r;var o=i(2),s=n(o)},/* 9 */
 /***/
 function(t,e,i){"use strict";function n(t){return t&&t.__esModule?t:{default:t}}
 // create new right-angled triangle, draw to the given context
 function r(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:42,i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:42,n=arguments.length>3&&void 0!==arguments[3]?arguments[3]:40,r=arguments.length>4&&void 0!==arguments[4]?arguments[4]:30;return new s.default(t,e,i,n,r)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=r;var o=i(3),s=n(o)},/* 10 */
 /***/
-function(t,e,i){"use strict";var n=i(5),r=document.getElementById("canvas"),o=r.getContext("2d"),s=r.width,u=r.height;(0,n.bgSolid)(r),(0,n.circle)(o,200,200,50).draw().outline(),(0,n.line)(o,0,0,s,u).draw().dist()}]);
+function(t,e,i){"use strict";function n(t){return t&&t.__esModule?t:{default:t}}var r=i(4),o=n(r),s=document.getElementById("canvas"),u=s.getContext("2d");s.width,s.height;o.default.bgSolid(s);var h=o.default.line(u,50,50,200,200).draw({weight:1,colour:"black"});console.log(h.xAngle("degrees"))}]);
 //# sourceMappingURL=scripts.js.map

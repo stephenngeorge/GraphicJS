@@ -28,4 +28,16 @@ export default class Circle {
     this.ctx.stroke();
     return this;
   }
+
+  /* ****
+    DATA METHODS
+  **** */
+  // get area of circle
+  area() {
+    return Math.PI * (this.r * this.r);
+  }
+  // get circumference of circle
+  circumf() {
+    return Math.PI * this.r * 2;
+  }
 }
