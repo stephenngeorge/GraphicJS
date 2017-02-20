@@ -2,7 +2,6 @@
 
 export default class Graphic {
   cartesian(quadrant = 0) {
-    console.log(this);
     let canvasHeight = this.ctx.canvas.clientHeight;
     let canvasWidth = this.ctx.canvas.clientWidth;
     switch (quadrant) {
