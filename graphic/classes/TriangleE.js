@@ -17,7 +17,6 @@ export default class TraingleR extends Graphic {
   **** */
   // draw triangle to canvas with fill colour (no stroke)
   draw(fillStyle = '#FFC0CB') {
-    this.ctx.translate(300, 200);
     this.ctx.beginPath();
     this.ctx.moveTo(this.xPos, this.yPos);
     this.ctx.lineTo(this.xPos - (this.side * .5), this.yPos + this.height);

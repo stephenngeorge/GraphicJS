@@ -11,7 +11,6 @@ export default class Rect extends Graphic {
     this.width = width;
     this.height = height;
   }
-
   /* ****
     DESIGN METHODS
   **** */
@@ -28,7 +27,6 @@ export default class Rect extends Graphic {
     this.ctx.strokeRect(this.x, this.y, this.width, this.height);
     return this;
   }
-
   /* ****
     DATA METHODS
   **** */
@@ -36,6 +34,7 @@ export default class Rect extends Graphic {
   area() {
     return this.width * this.height;
   }
+  // get perimeter of rectangle
   perim() {
     return 2 * (this.width + this.height);
   }

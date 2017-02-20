@@ -9,5 +9,6 @@ const c = canvas.getContext('2d');
 const width = canvas.width;
 const height = canvas.height;
 
-G.bgSolid(c).cartesian(1);
-G.circle(c, 0, 0, 60).outline({weight: 4, colour: '#808080'});
+G.bgSolid(c).cartesian();
+G.circle(c, 0, 0, 70).outline();
+G.line(c, 0, 0, 0, 70).draw({weight: 2, colour:'#555'});

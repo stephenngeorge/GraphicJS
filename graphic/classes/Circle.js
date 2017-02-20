@@ -10,7 +10,6 @@ export default class Circle extends Graphic {
     this.y = y;
     this.r = r;
   }
-
   /* ****
     DESIGN METHODS
   **** */
@@ -31,7 +30,6 @@ export default class Circle extends Graphic {
     this.ctx.stroke();
     return this;
   }
-
   /* ****
     DATA METHODS
   **** */

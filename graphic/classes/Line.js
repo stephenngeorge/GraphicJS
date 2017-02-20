@@ -11,7 +11,6 @@ export default class Line extends Graphic {
     this.xTo = xTo;
     this.yTo = yTo;
   }
-
   /* ****
     DESIGN METHODS
   **** */
@@ -25,7 +24,6 @@ export default class Line extends Graphic {
     this.ctx.stroke();
     return this;
   }
-
   /* ****
     DATA METHODS
   **** */
