@@ -1,7 +1,10 @@
 'use strict';
 
-export default class Line {
+import Graphic from './Graphic';
+
+export default class Line extends Graphic {
   constructor(ctx, xFrom, yFrom, xTo, yTo) {
+    super();
     this.ctx = ctx;
     this.xFrom = xFrom;
     this.yFrom = yFrom;

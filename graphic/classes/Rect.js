@@ -1,7 +1,10 @@
 'use strict';
 
-export default class Rect {
+import Graphic from './Graphic';
+
+export default class Rect extends Graphic {
   constructor(ctx, x, y, width, height) {
+    super();
     this.ctx = ctx;
     this.x = x;
     this.y = y;

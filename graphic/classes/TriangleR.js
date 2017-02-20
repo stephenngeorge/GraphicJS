@@ -1,7 +1,11 @@
 'use strict';
+
+import Graphic from './Graphic';
+
 // RIGHT-ANGLE TRIANGLE
-export default class TraingleR {
+export default class TraingleR extends Graphic {
   constructor(ctx, xPos, yPos, base, height) {
+    super();
     this.ctx = ctx;
     this.xPos = xPos;
     this.yPos = yPos;
