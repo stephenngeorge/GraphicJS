@@ -5,7 +5,6 @@ import Rect from '../classes/Rect';
 export default function bgSolid(ctx, colour = '#e7e7e7') {
   let canvasWidth = ctx.canvas.clientWidth;
   let canvasHeight = ctx.canvas.clientHeight;
-  let defaultClr = '#e7e7e7';
-  let bg = new Rect(ctx, 0, 0, canvasWidth, canvasHeight).draw(defaultClr);
+  let bg = new Rect(ctx, 0, 0, canvasWidth, canvasHeight).draw(colour);
   return bg;
 }

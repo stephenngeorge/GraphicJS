@@ -1,5 +1,6 @@
 'use strict';
 
+import canvas from './functions/canvas';
 import bgSolid from './functions/bgSolid';
 import line from './functions/line';
 import circle from './functions/circle';
@@ -14,6 +15,7 @@ import TriangleR from './classes/TriangleR';
 import TriangleE from './classes/TriangleE';
 
 const library = {
+  canvas,
   bgSolid,
   line,
   circle,

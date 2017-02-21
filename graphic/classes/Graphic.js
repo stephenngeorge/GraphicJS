@@ -27,4 +27,10 @@ export default class Graphic {
     this.ctx.transform(1, 0, 0, -1, 0, 0);
     return this;
   }
+
+  centre() {
+    let canvasHeight = this.ctx.canvas.clientHeight;
+    let canvasWidth = this.ctx.canvas.clientWidth;
+    this.ctx.translate(canvasWidth * .5, canvasHeight * .5);
+  }
 }
