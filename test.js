@@ -1,41 +1,40 @@
 'use strict';
-// import GraphicJS library
-import g from './graphic';
-// import styles
-import { shapeFill, outlines } from './stylesheet';
 
-// define canvas, target element & set canvas data to variables
-const { c, width, height, id } = g.canvas({
-  id: 'graphicJS-tutorial-sketch',
+import g from './graphic';
+
+const { c, width, height, id} = g.canvas({
+  width: 500,
+  height: 500,
+  id: 'randomWalker',
   el: document.getElementById('canvas-container')
 });
 
-let x = 0;
-let y = 0;
-let history = [];
-
 g.bgSolid(c, '#fff').centre();
 
-g.animate(() => {
-  g.rect(c, -width * .5, -height * .5, width, height).draw('#e7e7e7');
-  history.forEach(obj => {
-    g.circle(c, obj.x, obj.y, 3).draw('rgba(200, 0, 100, .05)');
-  });
-  let point = g.circle(c, x, y, 6).draw('rgba(200, 0, 100, .8)');
-  history.push({x: point.x, y: point.y});
-  // if (history.length > 50) { history.shift() }
+let walker = g.circle(c, 0, 0, 6);
+let pencil = g.line(c, 0, 0, 0, 0);
 
-  let choice = Math.random();
-  if (choice <= .25) {
-    x++;
-  }
-  else if (choice <= .5) {
-    y++;
-  }
-  else if (choice <= .75) {
-    x--;
-  }
-  else if (choice <= 1) {
-    y--;
-  }
-}, 24, 240);
+const SCENE_1 = g.animate(walk, 100, 200);
+SCENE_1.then(res => {
+  const SCENE_2 = g.animate(writeOn, 100, 200);
+  SCENE_2.then(res => {
+    console.log({
+      status: 'ANIMATION COMPLETE',
+      message: 'we hope you enjoyed the show'
+    });
+  }).catch(err => console.log(err));
+}).catch(err => console.log(err));
+
+
+function walk() {
+  g.bgSolid(c, '#f1f1f1', 'centre');
+  walker.draw('rgba(200, 0, 100, .6)');
+  walker.x++;
+}
+
+function writeOn() {
+  g.bgSolid(c, '#f1f1f1', 'centre');
+  walker.draw('rgba(200, 0, 100, .6)');
+  pencil.draw({weight: 2, colour: '#808080'});
+  pencil.xTo++;
+}
