@@ -1,6 +1,7 @@
 'use strict';
 
 import animate from './functions/animate';
+import rotate from './functions/rotate';
 import canvas from './functions/canvas';
 import bgSolid from './functions/bgSolid';
 import line from './functions/line';
@@ -21,6 +22,7 @@ import TriangleI from './classes/TriangleI';
 
 const library = {
   animate,
+  rotate,
   canvas,
   bgSolid,
   line,

@@ -32,5 +32,31 @@ export default class Graphic {
     let canvasHeight = this.ctx.canvas.clientHeight;
     let canvasWidth = this.ctx.canvas.clientWidth;
     this.ctx.translate(canvasWidth * .5, canvasHeight * .5);
+    return this;
+  }
+
+  rotate({ units = 'rad', angle = Math.PI / 2, code = () => console.log(`rotated by: ${angle}`) } = {}) {
+    let mode = units.toUpperCase();
+    if (mode === 'RAD' || mode === 'RADS' || mode === 'R' || mode=== 'RADIANS') {
+      this.ctx.save();
+      this.ctx.rotate(angle);
+      code();
+      this.ctx.restore();
+      return this;
+    }
+    else if (mode === 'DEG' || mode === 'DEGS' || mode === 'D' || mode === 'DEGREES') {
+      this.ctx.save();
+      this.ctx.rotate(angle * (Math.PI / 180));
+      func();
+      this.ctx.restore();
+      return this;
+    }
+    else {
+      console.log({
+        status: 'ERROR',
+        message: 'units not recognised, please specify "deg" or "rad"'
+      });
+      return this;
+    }
   }
 }

@@ -6,5 +6,10 @@ const { c, width, height, id } = g.canvas({
   el: document.getElementById('canvas-container')
 })
 
-g.bgSolid(c);
-g.segment(c, 100, height * .5, 100, Math.PI, 195).invert().outline();
+g.bgSolid(c).centre();
+
+g.circle(c, 0, 0, 50).outline();
+
+function test () {
+  console.log('so far so good')
+}
