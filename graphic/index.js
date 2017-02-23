@@ -4,6 +4,7 @@ import animate from './functions/animate';
 import canvas from './functions/canvas';
 import bgSolid from './functions/bgSolid';
 import line from './functions/line';
+import segment from './functions/segment';
 import circle from './functions/circle';
 import rect from './functions/rect';
 import triangleR from './functions/triangleR';
@@ -11,6 +12,7 @@ import triangleE from './functions/triangleE';
 import triangleI from './functions/triangleI';
 
 import Line from './classes/Line';
+import Segment from './classes/Segment';
 import Circle from './classes/Circle';
 import Rect from './classes/Rect';
 import TriangleR from './classes/TriangleR';
@@ -22,6 +24,7 @@ const library = {
   canvas,
   bgSolid,
   line,
+  segment,
   circle,
   rect,
   triangleR,
@@ -29,6 +32,7 @@ const library = {
   triangleI,
   classes: {
     Line,
+    Segment,
     Circle,
     Rect,
     TriangleR,
