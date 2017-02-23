@@ -1,17 +1,16 @@
 'use strict';
 
-import Graphic from './Graphic';
+import Graphic from '../Graphic';
 
-// EQUILATERAL TRIANGLE
-export default class TraingleI extends Graphic {
-  constructor(ctx, xPos, yPos, base, side) {
+// RIGHT-ANGLE TRIANGLE
+export default class TraingleR extends Graphic {
+  constructor(ctx, xPos, yPos, base, height) {
     super();
     this.ctx = ctx;
     this.xPos = xPos;
     this.yPos = yPos;
     this.base = base;
-    this.side = side;
-    this.height = Math.sqrt((this.side * this.side) - ((this.base * .5) * (this.base * .5)));
+    this.height = height;
   }
   /* ****
     DESIGN METHODS
@@ -20,8 +19,8 @@ export default class TraingleI extends Graphic {
   draw(fillStyle = '#FFC0CB') {
     this.ctx.beginPath();
     this.ctx.moveTo(this.xPos, this.yPos);
-    this.ctx.lineTo(this.xPos - (this.base * .5), this.yPos + this.height);
-    this.ctx.lineTo(this.xPos + (this.base * .5), this.yPos + this.height);
+    this.ctx.lineTo(this.xPos, this.yPos + this.height);
+    this.ctx.lineTo(this.xPos + this.base, this.yPos + this.height);
     this.ctx.fillStyle = fillStyle;
     this.ctx.fill();
     return this;
@@ -30,8 +29,8 @@ export default class TraingleI extends Graphic {
   outline({weight = 2, colour = '#808080'} = {}) {
     this.ctx.beginPath();
     this.ctx.moveTo(this.xPos, this.yPos);
-    this.ctx.lineTo(this.xPos - (this.base * .5), this.yPos + this.height);
-    this.ctx.lineTo(this.xPos + (this.base * .5), this.yPos + this.height);
+    this.ctx.lineTo(this.xPos, this.yPos + this.height);
+    this.ctx.lineTo(this.xPos + this.base, this.yPos + this.height);
     this.ctx.lineWidth = weight;
     this.ctx.strokeStyle = colour;
     this.ctx.closePath();
@@ -41,27 +40,31 @@ export default class TraingleI extends Graphic {
   /* ****
     DATA METHODS
   **** */
+  // get the length of the triangle's hypotenuse
+  hyp() {
+    return Math.sqrt((this.base * this.base) + (this.height * this.height));
+  }
   // get area of the triangle
   area() {
-    return (((this.base * .5) * this.height) * .5) * 2;
+    return (this.height * this.base) * .5;
   }
   // get the perimeter of the triangle
   perim() {
-    return (this.side * 2) + this.base;
+    return this.base + this.height + this.hyp();
   }
-  // get the three angles of the triangle, returned as an array (2 angles should be congruent)
+  // get the three angels of the triangle, returned as an array (right angle first and proceeding clockwise)
   angles(mode = 'rad') {
     let units = mode.toUpperCase();
-    let firstAngle = null, secondAngle = null, thirdAngle = null;
+    let rightAngle = null, firstAngle = null, secondAngle = null;
     if (units === 'RAD' || units === 'RADS' || units === 'R' || units === 'RADIANS') {
-      firstAngle = (Math.asin((this.base * .5) / this.side)) * 2;
-      secondAngle = Math.asin(this.height / this.side);
-      thirdAngle = secondAngle;
+      rightAngle = Math.PI / 2;
+      firstAngle = Math.asin(this.base / this.hyp());
+      secondAngle = Math.asin(this.height / this.hyp());
     }
     else if (units === 'DEG' || units === 'DEGS' || units === 'D' || units === 'DEGREES') {
-      firstAngle = (Math.asin((this.base * .5) / this.side) * (180 / Math.PI)) * 2;
-      secondAngle = Math.asin(this.height / this.side) * (180 / Math.PI);
-      thirdAngle = secondAngle;
+      rightAngle = (Math.PI / 2) * (180 / Math.PI);
+      firstAngle = (Math.asin(this.base / this.hyp()) * (180 / Math.PI));
+      secondAngle = (Math.asin(this.height / this.hyp()) * (180 / Math.PI));
     }
     else {
       return {
@@ -69,6 +72,6 @@ export default class TraingleI extends Graphic {
         message: 'the mode you have passed is not recognised, please specify "deg" or "rad"'
       }
     }
-    return [firstAngle, secondAngle, thirdAngle];
+    return [rightAngle, firstAngle, secondAngle];
   }
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-import Graphic from './Graphic';
+import Graphic from '../Graphic';
 
 export default class Segment extends Graphic {
   constructor(ctx, x, y, r, angle, chord) {

@@ -1,6 +1,6 @@
 'use strict';
 
-import Graphic from './Graphic';
+import Graphic from '../Graphic';
 
 export default class Circle extends Graphic {
   constructor(ctx, x, y, r) {

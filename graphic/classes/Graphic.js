@@ -47,7 +47,7 @@ export default class Graphic {
     else if (mode === 'DEG' || mode === 'DEGS' || mode === 'D' || mode === 'DEGREES') {
       this.ctx.save();
       this.ctx.rotate(angle * (Math.PI / 180));
-      func();
+      code();
       this.ctx.restore();
       return this;
     }

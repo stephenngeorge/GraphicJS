@@ -1,6 +1,6 @@
 'use strict';
 
-import Graphic from './Graphic';
+import Graphic from '../Graphic';
 
 // EQUILATERAL TRIANGLE
 export default class TraingleE extends Graphic {

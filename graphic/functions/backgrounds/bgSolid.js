@@ -1,6 +1,6 @@
 'use strict';
 
-import Rect from '../classes/Rect';
+import Rect from '../../classes/shapes/Rect';
 // draw fill rectangle full size of canvas, colour default to light grey
 export default function bgSolid(ctx, colour = '#e7e7e7', anchor = 'top-left') {
   let canvasWidth = ctx.canvas.clientWidth;

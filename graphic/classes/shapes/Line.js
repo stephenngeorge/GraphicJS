@@ -1,6 +1,6 @@
 'use strict';
 
-import Graphic from './Graphic';
+import Graphic from '../Graphic';
 
 export default class Line extends Graphic {
   constructor(ctx, xFrom, yFrom, xTo, yTo) {
