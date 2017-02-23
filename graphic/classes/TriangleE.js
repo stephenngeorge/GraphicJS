@@ -3,7 +3,7 @@
 import Graphic from './Graphic';
 
 // EQUILATERAL TRIANGLE
-export default class TraingleR extends Graphic {
+export default class TraingleE extends Graphic {
   constructor(ctx, xPos, yPos, side) {
     super();
     this.ctx = ctx;
