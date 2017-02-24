@@ -12,10 +12,13 @@ const { c, width, height, id } = g.canvas({
 
 g.bgSolid(c, '#fff').centre();
 
-let circ = g.circle(c, 0, 0, 150);
-let factor = 3;
+// configuration variables
+let factor = 5;
+let rad = 200;
 let angle = 0;
 let orbitRotation = 0;
+
+let circ = g.circle(c, 0, 0, rad);
 let radius = g.line(c, 0, 0, 0, -circ.r);
 
 function spyrograph() {

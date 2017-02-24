@@ -180,9 +180,11 @@ code:function(){
 // save context, then execute function argument
 s.default.aside(u,function(){
 // translate to main circle perimeter, draw point & smaller circle touching (not drawn to canvas)
-d.draw({weight:1,colour:"rgba(160, 160, 160, .3)"}),u.translate(d.xTo,d.yTo),s.default.circle(u,0,0,1).draw("rgba(128, 128, 128, .6)");var t=s.default.circle(u,0,-l.r/c,l.r/c);
+v.draw({weight:1,colour:"rgba(160, 160, 160, .3)"}),u.translate(v.xTo,v.yTo),s.default.circle(u,0,0,1).draw("rgba(128, 128, 128, .6)");var t=s.default.circle(u,0,-d.r/l,d.r/l);
 // translate to centre of smaller circle (orbit) and execute new function
 s.default.aside(u,function(){u.translate(t.x,t.y),s.default.rotate(u,{units:"d",angle:f,
 // rotate relative to centre of outer orbit & draw lines from centre (not drawn to canvas)
-code:function(){var e=s.default.line(u,0,0,0,t.y),n=s.default.line(u,0,0,0,.4*t.y),i=s.default.line(u,0,0,0,2*t.y);s.default.circle(u,e.xTo,e.yTo,2).draw("rgba(60, 60, 60, .4)"),s.default.circle(u,n.xTo,n.yTo,2).draw("rgba(30, 30, 30, .4)"),s.default.circle(u,i.xTo,i.yTo,2).draw("rgba(90, 90, 90, .4)")}}).then(function(){return f+=c}).catch(function(t){return console.log(t)})})})}}).then(function(){return h++}).catch(function(t){return console.log(t)})}var o=n(10),s=i(o),a=(n(11),s.default.canvas({width:1e3,height:1e3,el:document.getElementById("canvas-container")})),u=a.c;a.width,a.height,a.id;s.default.bgSolid(u,"#fff").centre();var l=s.default.circle(u,0,0,150),c=3,h=0,f=0,d=s.default.line(u,0,0,0,-l.r);s.default.animate(r,48,361)}]);
+code:function(){var e=s.default.line(u,0,0,0,t.y),n=s.default.line(u,0,0,0,.4*t.y),i=s.default.line(u,0,0,0,2*t.y);s.default.circle(u,e.xTo,e.yTo,2).draw("rgba(60, 60, 60, .4)"),s.default.circle(u,n.xTo,n.yTo,2).draw("rgba(30, 30, 30, .4)"),s.default.circle(u,i.xTo,i.yTo,2).draw("rgba(90, 90, 90, .4)")}}).then(function(){return f+=l}).catch(function(t){return console.log(t)})})})}}).then(function(){return h++}).catch(function(t){return console.log(t)})}var o=n(10),s=i(o),a=(n(11),s.default.canvas({width:1e3,height:1e3,el:document.getElementById("canvas-container")})),u=a.c;a.width,a.height,a.id;s.default.bgSolid(u,"#fff").centre();
+// configuration variables
+var l=5,c=200,h=0,f=0,d=s.default.circle(u,0,0,c),v=s.default.line(u,0,0,0,-d.r);s.default.animate(r,48,361)}]);
 //# sourceMappingURL=scripts.js.map
