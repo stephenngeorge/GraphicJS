@@ -2,6 +2,7 @@
 
 import animate from './functions/Globals/animate';
 import rotate from './functions/Globals/rotate';
+import aside from './functions/Globals/aside';
 import canvas from './functions/Globals/canvas';
 import bgSolid from './functions/backgrounds/bgSolid';
 import line from './functions/shapes/line';
@@ -26,6 +27,7 @@ import TriangleI from './classes/shapes/TriangleI';
 const library = {
   animate,
   rotate,
+  aside,
   canvas,
   bgSolid,
   line,
