@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   devtool: 'source-map',
-  entry: path.join(__dirname, 'test.js'),
+  entry: path.join(__dirname, 'spyrography.js'),
   output: {
     publicPath: '/',
     path: path.join(__dirname, 'js'),
