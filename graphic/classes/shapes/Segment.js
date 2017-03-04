@@ -10,6 +10,7 @@ export default class Segment extends Graphic {
     this.y = y;
     this.r = r;
     this.angle = angle;
+    this.endAngle = 2 * Math.asin(this.chord / (this.r * 2));
     this.chord = chord;
     this.dir = false;
     if (this.chord > (this.r * 2)) {
@@ -30,10 +31,8 @@ export default class Segment extends Graphic {
   }
   // draw segemnt to canvas with fill colour (no stroke)
   draw(fillStyle = '#FFC0CB') {
-    // calculate end angle
-    let endAngle = 2 * Math.asin(this.chord / (this.r * 2));
     this.ctx.beginPath();
-    this.ctx.arc(this.x + this.r, this.y, this.r, this.angle, this.angle + endAngle, this.dir);
+    this.ctx.arc(this.x + this.r, this.y, this.r, this.angle, this.angle + this.endAngle, this.dir);
     this.ctx.fillStyle = fillStyle;
     this.ctx.fill();
     return this;

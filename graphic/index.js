@@ -7,6 +7,7 @@ import canvas from './functions/Globals/canvas';
 import bgSolid from './functions/backgrounds/bgSolid';
 import line from './functions/shapes/line';
 import point from './functions/shapes/point';
+import sector from './functions/shapes/sector';
 import segment from './functions/shapes/segment';
 import circle from './functions/shapes/circle';
 import rect from './functions/shapes/rect';
@@ -17,6 +18,7 @@ import triangleI from './functions/shapes/triangleI';
 import Graphic from './classes/Graphic';
 import Line from './classes/shapes/Line';
 import Point from './classes/shapes/Point';
+import Sector from './classes/shapes/Sector';
 import Segment from './classes/shapes/Segment';
 import Circle from './classes/shapes/Circle';
 import Rect from './classes/shapes/Rect';
@@ -32,6 +34,7 @@ const library = {
   bgSolid,
   line,
   point,
+  sector,
   segment,
   circle,
   rect,
@@ -42,6 +45,7 @@ const library = {
     Graphic,
     Line,
     Point,
+    Sector,
     Segment,
     Circle,
     Rect,
