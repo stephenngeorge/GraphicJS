@@ -8,4 +8,10 @@ export default class Vector extends Graphic {
     this.x = x;
     this.y = y;
   }
+
+  add(vector) {
+    this.x += vector.x;
+    this.y += vector.y;
+    return this;
+  }
 }

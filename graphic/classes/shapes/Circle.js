@@ -1,14 +1,17 @@
 'use strict';
 
 import Graphic from '../Graphic';
+import vector from '../../functions/vector';
 
 export default class Circle extends Graphic {
   constructor(ctx, x, y, r) {
     super();
     this.ctx = ctx;
-    this.x = x;
-    this.y = y;
+    this.pos = vector(x, y);
+    this.x = this.pos.x;
+    this.y = this.pos.y;
     this.r = r;
+    this.vel = vector(1, 1);
   }
   /* ****
     DESIGN METHODS
@@ -16,7 +19,7 @@ export default class Circle extends Graphic {
   // draw circle to canvas with fill colour (no stroke)
   draw(fillStyle = '#FFC0CB') {
     this.ctx.beginPath();
-    this.ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+    this.ctx.arc(this.pos.x, this.pos.y, this.r, 0, Math.PI * 2);
     this.ctx.fillStyle = fillStyle;
     this.ctx.fill();
     return this;
@@ -24,7 +27,7 @@ export default class Circle extends Graphic {
   // draw circle to canvas with stroke (no fill)
   outline({ weight = 2, colour = '#808080' } = {}) {
     this.ctx.beginPath();
-    this.ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+    this.ctx.arc(this.pos.x, this.pos.y, this.r, 0, Math.PI * 2);
     this.ctx.lineWidth = weight;
     this.ctx.strokeStyle = colour;
     this.ctx.stroke();

@@ -62,13 +62,17 @@ export default class Graphic {
       return this;
     }
   }
-
   /* ****
     ANIMATION METHODS
   **** */
-  vel(vector) {
-    this.x += vector.x;
-    this.y += vector.y;
+  // restrict possible movement of shapes on x axis
+  boundX(min, max) {
+    if (this.pos.x >= max || this.pos.x <= min) this.vel.x *= -1;
+    return this;
+  }
+  // restrict possible movement of shapes on y axis
+  boundY(min, max) {
+    if (this.pos.y >= max || this.pos.y <= min) this.vel.y *= -1;
     return this;
   }
 }
