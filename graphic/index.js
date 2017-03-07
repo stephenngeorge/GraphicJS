@@ -5,6 +5,7 @@ import rotate from './functions/Globals/rotate';
 import aside from './functions/Globals/aside';
 import canvas from './functions/Globals/canvas';
 import bgSolid from './functions/backgrounds/bgSolid';
+import vector from './functions/vector';
 import line from './functions/shapes/line';
 import point from './functions/shapes/point';
 import sector from './functions/shapes/sector';
@@ -16,6 +17,7 @@ import triangleE from './functions/shapes/triangleE';
 import triangleI from './functions/shapes/triangleI';
 
 import Graphic from './classes/Graphic';
+import Vector from './classes/Vector';
 import Line from './classes/shapes/Line';
 import Point from './classes/shapes/Point';
 import Sector from './classes/shapes/Sector';
@@ -32,6 +34,7 @@ const library = {
   aside,
   canvas,
   bgSolid,
+  vector,
   line,
   point,
   sector,
@@ -43,6 +46,7 @@ const library = {
   triangleI,
   classes: {
     Graphic,
+    Vector,
     Line,
     Point,
     Sector,

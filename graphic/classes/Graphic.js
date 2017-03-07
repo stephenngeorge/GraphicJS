@@ -1,6 +1,9 @@
 'use strict';
 
 export default class Graphic {
+  /* ****
+    TRANSFORMATION METHODS
+  **** */
   cartesian(quadrant = 0) {
     let canvasHeight = this.ctx.canvas.clientHeight;
     let canvasWidth = this.ctx.canvas.clientWidth;
@@ -58,5 +61,14 @@ export default class Graphic {
       });
       return this;
     }
+  }
+
+  /* ****
+    ANIMATION METHODS
+  **** */
+  vel(vector) {
+    this.x += vector.x;
+    this.y += vector.y;
+    return this;
   }
 }
