@@ -4,6 +4,7 @@ import animate from './functions/Globals/animate';
 import rotate from './functions/Globals/rotate';
 import aside from './functions/Globals/aside';
 import canvas from './functions/Globals/canvas';
+import map from './functions/Globals/map';
 import bgSolid from './functions/backgrounds/bgSolid';
 import vector from './functions/vector';
 import line from './functions/shapes/line';
@@ -32,6 +33,7 @@ const library = {
   animate,
   rotate,
   aside,
+  map,
   canvas,
   bgSolid,
   vector,
