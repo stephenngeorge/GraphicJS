@@ -1,17 +1,17 @@
 'use strict';
 
 import Graphic from '../Graphic';
-import vector from '../../functions/vector';
+import Vector from '../Vector';
 
 export default class Circle extends Graphic {
   constructor(ctx, x, y, r) {
     super();
     this.ctx = ctx;
-    this.pos = vector(x, y);
+    this.pos = new Vector(x, y);
     this.x = this.pos.x;
     this.y = this.pos.y;
     this.r = r;
-    this.vel = vector(1, 1);
+    this.vel = new Vector(1, 1);
   }
   /* ****
     DESIGN METHODS

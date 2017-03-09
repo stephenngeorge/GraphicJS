@@ -1,15 +1,18 @@
 'use strict';
 
 import Graphic from '../Graphic';
+import Vector from '../Vector';
 
 export default class Rect extends Graphic {
   constructor(ctx, x, y, width, height) {
     super();
     this.ctx = ctx;
-    this.x = x;
-    this.y = y;
+    this.pos = new Vector(x, y);
+    this.x = this.pos.x;
+    this.y = this.pos.y;
     this.width = width;
     this.height = height;
+    this.vel = new Vector(1, 1);
   }
   /* ****
     DESIGN METHODS

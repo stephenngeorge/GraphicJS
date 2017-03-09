@@ -1,6 +1,7 @@
 'use strict';
 
 import Graphic from '../Graphic';
+import Vector from '../Vector';
 
 import circle from '../../functions/shapes/circle';
 
@@ -8,8 +9,10 @@ export default class Point extends Graphic {
   constructor(ctx, x, y) {
     super();
     this.ctx = ctx;
-    this.x = x;
-    this.y = y;
+    this.pos = new Vector(x, y);
+    this.x = this.pos.x;
+    this.y = this.pos.y;
+    this.vel = new Vector(1, 1);
   }
   /* ****
     DESIGN METHODS

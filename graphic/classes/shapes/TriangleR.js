@@ -1,16 +1,19 @@
 'use strict';
 
 import Graphic from '../Graphic';
+import Vector from '../Vector';
 
 // RIGHT-ANGLE TRIANGLE
 export default class TraingleR extends Graphic {
-  constructor(ctx, xPos, yPos, base, height) {
+  constructor(ctx, x, y, base, height) {
     super();
     this.ctx = ctx;
-    this.xPos = xPos;
-    this.yPos = yPos;
+    this.pos = new Vector(x, y);
+    this.x = this.pos.x;
+    this.y = this.pos.y;
     this.base = base;
     this.height = height;
+    this.vel = new Vector(1, 1);
   }
   /* ****
     DESIGN METHODS

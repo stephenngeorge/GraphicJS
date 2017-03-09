@@ -1,17 +1,20 @@
 'use strict';
 
 import Graphic from '../Graphic';
+import Vector from '../Vector';
 
 // EQUILATERAL TRIANGLE
 export default class TraingleI extends Graphic {
-  constructor(ctx, xPos, yPos, base, side) {
+  constructor(ctx, x, y, base, side) {
     super();
     this.ctx = ctx;
-    this.xPos = xPos;
-    this.yPos = yPos;
+    this.pos = new Vector(x, y);
+    this.x = this.pos.x;
+    this.y = this.pos.y;
     this.base = base;
     this.side = side;
     this.height = Math.sqrt((this.side * this.side) - ((this.base * .5) * (this.base * .5)));
+    this.vel = new Vector(1, 1);
   }
   /* ****
     DESIGN METHODS

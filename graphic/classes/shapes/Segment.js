@@ -1,13 +1,15 @@
 'use strict';
 
 import Graphic from '../Graphic';
+import Vector from '../Vector';
 
 export default class Segment extends Graphic {
   constructor(ctx, x, y, r, angle, chord) {
     super();
     this.ctx = ctx;
-    this.x = x;
-    this.y = y;
+    this.pos = new Vector(x, y);
+    this.x = this.pos.x;
+    this.y = this.pos.y;
     this.r = r;
     this.angle = angle;
     this.endAngle = 2 * Math.asin(this.chord / (this.r * 2));
@@ -19,6 +21,7 @@ export default class Segment extends Graphic {
         message: 'mathematical problems - chord length (final argument), cannot exceed diameter (radius * 2). Consult docs for more information'
       })
     }
+    this.vel = new Vector(1, 1);
   }
   /* ****
     DESIGN METHODS

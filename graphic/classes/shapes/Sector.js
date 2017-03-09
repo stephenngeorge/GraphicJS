@@ -1,16 +1,19 @@
 'use strict';
 
 import Graphic from '../Graphic';
+import Vector from '../Vector';
 
 export default class Sector extends Graphic {
   constructor(ctx, x, y, r, angle, size) {
     super();
     this.ctx = ctx;
-    this.x = x;
-    this.y = y;
+    this.pos = new Vector(x, y)
+    this.x = this.pos.x;
+    this.y = this.pos.y;
     this.r = r;
     this.angle = angle;
     this.size = size;
+    this.vel = new Vector(1, 1);
   }
   /* ****
     DESIGN METHODS
