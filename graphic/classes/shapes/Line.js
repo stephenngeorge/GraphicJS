@@ -1,15 +1,14 @@
 'use strict';
 
 import Graphic from '../Graphic';
+import Vector from '../Vector';
 
 export default class Line extends Graphic {
   constructor(ctx, xFrom, yFrom, xTo, yTo) {
     super();
     this.ctx = ctx;
-    this.xFrom = xFrom;
-    this.yFrom = yFrom;
-    this.xTo = xTo;
-    this.yTo = yTo;
+    this.posFrom = new Vector(xFrom, yFrom);
+    this.posTo = new Vecotr(xTo, yTo);
   }
   /* ****
     DESIGN METHODS
@@ -18,8 +17,8 @@ export default class Line extends Graphic {
   draw({weight = 2, colour = '#808080'} = {}) {
     this.ctx.beginPath();
     this.ctx.lineWidth = weight;
-    this.ctx.moveTo(this.xFrom, this.yFrom);
-    this.ctx.lineTo(this.xTo, this.yTo);
+    this.ctx.moveTo(this.posFrom.x, this.posFrom.y);
+    this.ctx.lineTo(this.posTo.x, this.posTo.y);
     this.ctx.strokeStyle = colour;
     this.ctx.stroke();
     return this;
@@ -29,15 +28,15 @@ export default class Line extends Graphic {
   **** */
   // get length of line (function is called 'dist()' as 'length' is a reserved word in JS)
   dist() {
-    let xDiff = Math.abs(this.xFrom - this.xTo);
-    let yDiff = Math.abs(this.yFrom - this.yTo);
+    let xDiff = Math.abs(this.posFrom.x - this.posTo.x);
+    let yDiff = Math.abs(this.posFrom.y - this.posTo.y);
     let lineSqr = (xDiff * xDiff) + (yDiff * yDiff);
     return Math.sqrt(lineSqr);
   }
   // get gradient of line
   grad() {
-    let xDiff = Math.abs(this.xFrom - this.xTo);
-    let yDiff = Math.abs(this.yFrom - this.yTo);
+    let xDiff = Math.abs(this.posFrom.x - this.posTo.x);
+    let yDiff = Math.abs(this.posFrom.y - this.posTo.y);
     return yDiff / xDiff;
   }
   // get angle of line relative to x-axis (x-axis imaginery line running parrallel to top of canvas, touching the origin of the line [y of x-axis === this.yFrom])

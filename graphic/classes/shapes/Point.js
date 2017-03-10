@@ -10,8 +10,6 @@ export default class Point extends Graphic {
     super();
     this.ctx = ctx;
     this.pos = new Vector(x, y);
-    this.x = this.pos.x;
-    this.y = this.pos.y;
     this.vel = new Vector(1, 1);
   }
   /* ****
@@ -20,12 +18,12 @@ export default class Point extends Graphic {
   // draw point (1 pixel of colour)
   draw(colour = '#808080') {
     this.ctx.fillStyle = colour;
-    this.ctx.fillRect(this.x, this.y, 1, 1);
+    this.ctx.fillRect(this.pos.x, this.pos.y, 1, 1);
     return this;
   }
   // help show location point by drawing small circle around it
   spotlight(colour = 'rgba(255, 255, 255, .5)') {
-    circle(this.ctx, this.x, this.y, 4).outline({weight: 1, colour});
+    circle(this.ctx, this.pos.x, this.pos.y, 4).outline({weight: 1, colour});
     return this;
   }
 }

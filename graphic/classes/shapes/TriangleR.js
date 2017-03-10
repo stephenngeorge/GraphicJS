@@ -9,8 +9,6 @@ export default class TraingleR extends Graphic {
     super();
     this.ctx = ctx;
     this.pos = new Vector(x, y);
-    this.x = this.pos.x;
-    this.y = this.pos.y;
     this.base = base;
     this.height = height;
     this.vel = new Vector(1, 1);
@@ -21,9 +19,9 @@ export default class TraingleR extends Graphic {
   // draw triangle to canvas with fill colour (no stroke)
   draw(fillStyle = '#FFC0CB') {
     this.ctx.beginPath();
-    this.ctx.moveTo(this.xPos, this.yPos);
-    this.ctx.lineTo(this.xPos, this.yPos + this.height);
-    this.ctx.lineTo(this.xPos + this.base, this.yPos + this.height);
+    this.ctx.moveTo(this.pos.x, this.pos.y);
+    this.ctx.lineTo(this.pos.x, this.pos.y + this.height);
+    this.ctx.lineTo(this.pos.x + this.base, this.pos.y + this.height);
     this.ctx.fillStyle = fillStyle;
     this.ctx.fill();
     return this;
@@ -31,9 +29,9 @@ export default class TraingleR extends Graphic {
   // draw triangle to canvas with stroke (no fill)
   outline({weight = 2, colour = '#808080'} = {}) {
     this.ctx.beginPath();
-    this.ctx.moveTo(this.xPos, this.yPos);
-    this.ctx.lineTo(this.xPos, this.yPos + this.height);
-    this.ctx.lineTo(this.xPos + this.base, this.yPos + this.height);
+    this.ctx.moveTo(this.pos.x, this.pos.y);
+    this.ctx.lineTo(this.pos.x, this.pos.y + this.height);
+    this.ctx.lineTo(this.pos.x + this.base, this.pos.y + this.height);
     this.ctx.lineWidth = weight;
     this.ctx.strokeStyle = colour;
     this.ctx.closePath();

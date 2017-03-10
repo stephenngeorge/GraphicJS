@@ -8,8 +8,6 @@ export default class Rect extends Graphic {
     super();
     this.ctx = ctx;
     this.pos = new Vector(x, y);
-    this.x = this.pos.x;
-    this.y = this.pos.y;
     this.width = width;
     this.height = height;
     this.vel = new Vector(1, 1);
@@ -20,14 +18,14 @@ export default class Rect extends Graphic {
   // draw rectangle to canvas with fill colour (no stroke)
   draw(fillStyle = '#FFC0CB') {
     this.ctx.fillStyle = fillStyle;
-    this.ctx.fillRect(this.x, this.y, this.width, this.height);
+    this.ctx.fillRect(this.pos.x, this.pos.y, this.width, this.height);
     return this;
   }
   // draw rectangle to canvas with stroke (no fill)
   outline({weight = 2, colour = '#808080'} = {}) {
     this.ctx.lineWidth = weight;
     this.ctx.strokeStyle = colour;
-    this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+    this.ctx.strokeRect(this.pos.x, this.pos.y, this.width, this.height);
     return this;
   }
   /* ****

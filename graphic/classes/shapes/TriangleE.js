@@ -9,8 +9,6 @@ export default class TraingleE extends Graphic {
     super();
     this.ctx = ctx;
     this.pos = new Vector(x, y);
-    this.x = this.pos.x;
-    this.y = this.pos.y;
     this.side = side;
     this.height = Math.sqrt((this.side * this.side) - ((this.side * .5) * (this.side * .5)));
     this.vel = new Vector(1, 1);
@@ -21,9 +19,9 @@ export default class TraingleE extends Graphic {
   // draw triangle to canvas with fill colour (no stroke)
   draw(fillStyle = '#FFC0CB') {
     this.ctx.beginPath();
-    this.ctx.moveTo(this.xPos, this.yPos);
-    this.ctx.lineTo(this.xPos - (this.side * .5), this.yPos + this.height);
-    this.ctx.lineTo(this.xPos + (this.side * .5), this.yPos + this.height);
+    this.ctx.moveTo(this.pos.x, this.pos.y);
+    this.ctx.lineTo(this.pos.x - (this.side * .5), this.pos.y + this.height);
+    this.ctx.lineTo(this.pos.x + (this.side * .5), this.pos.y + this.height);
     this.ctx.fillStyle = fillStyle;
     this.ctx.fill();
     return this;
@@ -31,9 +29,9 @@ export default class TraingleE extends Graphic {
   // draw triangle to canvas with stroke (no fill)
   outline({weight = 2, colour = '#808080'} = {}) {
     this.ctx.beginPath();
-    this.ctx.moveTo(this.xPos, this.yPos);
-    this.ctx.lineTo(this.xPos - (this.side * .5), this.yPos + this.height);
-    this.ctx.lineTo(this.xPos + (this.side * .5), this.yPos + this.height);
+    this.ctx.moveTo(this.pos.x, this.pos.y);
+    this.ctx.lineTo(this.pos.x - (this.side * .5), this.pos.y + this.height);
+    this.ctx.lineTo(this.pos.x + (this.side * .5), this.pos.y + this.height);
     this.ctx.lineWidth = weight;
     this.ctx.strokeStyle = colour;
     this.ctx.closePath();

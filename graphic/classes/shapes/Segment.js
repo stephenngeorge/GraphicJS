@@ -8,8 +8,6 @@ export default class Segment extends Graphic {
     super();
     this.ctx = ctx;
     this.pos = new Vector(x, y);
-    this.x = this.pos.x;
-    this.y = this.pos.y;
     this.r = r;
     this.angle = angle;
     this.endAngle = 2 * Math.asin(this.chord / (this.r * 2));
@@ -35,7 +33,7 @@ export default class Segment extends Graphic {
   // draw segemnt to canvas with fill colour (no stroke)
   draw(fillStyle = '#FFC0CB') {
     this.ctx.beginPath();
-    this.ctx.arc(this.x + this.r, this.y, this.r, this.angle, this.angle + this.endAngle, this.dir);
+    this.ctx.arc(this.pos.x + this.r, this.pos.y, this.r, this.angle, this.angle + this.endAngle, this.dir);
     this.ctx.fillStyle = fillStyle;
     this.ctx.fill();
     return this;
@@ -45,7 +43,7 @@ export default class Segment extends Graphic {
     // calculate end angle
     let endAngle = 2 * Math.asin(this.chord / (this.r * 2));
     this.ctx.beginPath();
-    this.ctx.arc(this.x + this.r, this.y, this.r, this.angle, this.angle + endAngle, this.dir);
+    this.ctx.arc(this.pos.x + this.r, this.pos.y, this.r, this.angle, this.angle + endAngle, this.dir);
     this.ctx.lineWidth = weight;
     this.ctx.strokeStyle = colour;
     this.ctx.stroke();

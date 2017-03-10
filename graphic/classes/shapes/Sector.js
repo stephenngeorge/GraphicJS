@@ -8,8 +8,6 @@ export default class Sector extends Graphic {
     super();
     this.ctx = ctx;
     this.pos = new Vector(x, y)
-    this.x = this.pos.x;
-    this.y = this.pos.y;
     this.r = r;
     this.angle = angle;
     this.size = size;
@@ -22,13 +20,13 @@ export default class Sector extends Graphic {
     let xStart = Math.cos(this.angle) * this.r;
     let yStart = Math.sin(this.angle) * this.r;
     this.ctx.beginPath();
-    this.ctx.moveTo(this.x, this.y);
+    this.ctx.moveTo(this.pos.x, this.pos.y);
     this.ctx.lineTo(xStart, yStart);
-    this.ctx.arc(this.x, this.y, this.r, this.angle, this.angle + this.size);
+    this.ctx.arc(this.pos.x, this.pos.y, this.r, this.angle, this.angle + this.size);
     this.ctx.moveTo(0, 0);
     this.ctx.save();
     this.ctx.rotate(this.angle + this.size - Math.PI / 2);
-    this.ctx.lineTo(this.x, this.r);
+    this.ctx.lineTo(this.pos.x, this.r);
     this.ctx.fillStyle = fillStyle;
     this.ctx.fill();
     this.ctx.restore();
@@ -39,13 +37,13 @@ export default class Sector extends Graphic {
     let xStart = Math.cos(this.angle) * this.r;
     let yStart = Math.sin(this.angle) * this.r;
     this.ctx.beginPath();
-    this.ctx.moveTo(this.x, this.y);
+    this.ctx.moveTo(this.pos.x, this.pos.y);
     this.ctx.lineTo(xStart, yStart);
-    this.ctx.arc(this.x, this.y, this.r, this.angle, this.angle + this.size);
+    this.ctx.arc(this.pos.x, this.pos.y, this.r, this.angle, this.angle + this.size);
     this.ctx.moveTo(0, 0);
     this.ctx.save();
     this.ctx.rotate(this.angle + this.size - Math.PI / 2);
-    this.ctx.lineTo(this.x, this.r);
+    this.ctx.lineTo(this.pos.x, this.r);
     this.ctx.lineWidth = weight;
     this.ctx.strokeStyle = colour;
     this.ctx.stroke();
