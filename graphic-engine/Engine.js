@@ -1,6 +1,6 @@
 export default class Engine {
 
-  constructor(bodies, { gravity_x = 0, gravity_y = 1, context = null, boundX = false, boundY = false } = {}) {
+  constructor(bodies, { gravity_x = 0, gravity_y = 3, context = null, boundX = false, boundY = false } = {}) {
     this.bodies = bodies;
     this.gravity_x = gravity_x;
     this.gravity_y = gravity_y;
@@ -17,12 +17,12 @@ export default class Engine {
   }
 
   restrictX(body) {
-    if (body.entity.pos.x >= this.context.canvas.clientWidth) body.entity.pos.x = this.context.canvas.clientWidth;
-    if (body.entity.pos.x <= 0) body.entity.pos.x = 0;
+    if (body.entity.pos.x >= this.context.canvas.clientWidth - body.size) body.entity.pos.x = this.context.canvas.clientWidth - body.size;
+    if (body.entity.pos.x <= 0 + body.size) body.entity.pos.x = 0 + body.size;
   }
   restrictY(body) {
-    if (body.entity.pos.y >= this.context.canvas.clientHeight) body.entity.pos.y = this.context.canvas.clientHeight;
-    if (body.entity.pos.y <= 0) body.entity.pos.y = 0;
+    if (body.entity.pos.y >= this.context.canvas.clientHeight - body.size) body.entity.pos.y = this.context.canvas.clientHeight - body.size;
+    if (body.entity.pos.y <= 0 + body.size) body.entity.pos.y = 0 + body.size;
   }
 
   step() {

@@ -1,6 +1,6 @@
 'use strict';
 
-export default function animate(animation, frameRate = 24, stop = null) {
+export default function animate(animation, frameRate = 60, stop = null) {
   let frameCount = 0;
   return new Promise((res, rej) => {
     let interval = setInterval(() => {
