@@ -37,11 +37,11 @@ export default class Circle extends Graphic {
     DATA METHODS
   **** */
   // get area of circle
-  area() {
+  _area() {
     return Math.PI * (this.r * this.r);
   }
   // get circumference of circle
-  circumf() {
+  _circumf() {
     return Math.PI * this.r * 2;
   }
 }

@@ -8,7 +8,7 @@ export default class Line extends Graphic {
     super();
     this.ctx = ctx;
     this.posFrom = new Vector(xFrom, yFrom);
-    this.posTo = new Vecotr(xTo, yTo);
+    this.posTo = new Vector(xTo, yTo);
   }
   /* ****
     DESIGN METHODS
@@ -27,20 +27,20 @@ export default class Line extends Graphic {
     DATA METHODS
   **** */
   // get length of line (function is called 'dist()' as 'length' is a reserved word in JS)
-  dist() {
+  _dist() {
     let xDiff = Math.abs(this.posFrom.x - this.posTo.x);
     let yDiff = Math.abs(this.posFrom.y - this.posTo.y);
     let lineSqr = (xDiff * xDiff) + (yDiff * yDiff);
     return Math.sqrt(lineSqr);
   }
   // get gradient of line
-  grad() {
+  _grad() {
     let xDiff = Math.abs(this.posFrom.x - this.posTo.x);
     let yDiff = Math.abs(this.posFrom.y - this.posTo.y);
     return yDiff / xDiff;
   }
   // get angle of line relative to x-axis (x-axis imaginery line running parrallel to top of canvas, touching the origin of the line [y of x-axis === this.yFrom])
-  xAngle(mode = 'rad') {
+  _xAngle(mode = 'rad') {
     let units = mode.toUpperCase();
     let slope = this.grad();
     if (units === 'RAD' || units === 'R' || units === 'RADIANS') {
@@ -59,7 +59,7 @@ export default class Line extends Graphic {
   }
   /*  get angle of line relative to y-axis (y-axis imaginery line running parrallel to left of canvas, touching the origin of the line [x of y-axis === this.xFrom])
       calculated by subtracting xAngle from right-angle   */
-  yAngle(mode = 'rad') {
+  _yAngle(mode = 'rad') {
     let units = mode.toUpperCase();
     if (units === 'RAD' || units === 'RADS' || units === 'R' || units === 'RADIANS') {
       return (Math.PI / 2) - this.xAngle();

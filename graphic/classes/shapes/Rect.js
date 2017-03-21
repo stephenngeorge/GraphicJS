@@ -32,11 +32,11 @@ export default class Rect extends Graphic {
     DATA METHODS
   **** */
   // get area of rectangle
-  area() {
+  _area() {
     return this.width * this.height;
   }
   // get perimeter of rectangle
-  perim() {
+  _perim() {
     return 2 * (this.width + this.height);
   }
 }

@@ -42,11 +42,11 @@ export default class TraingleE extends Graphic {
     DATA METHODS
   **** */
   // get area of the triangle
-  area() {
+  _area() {
     return (Math.sqrt(3) * (this.side * this.side)) * .25;
   }
   // get the perimeter of the triangle
-  perim() {
+  _perim() {
     return this.side * 3;
   }
 }

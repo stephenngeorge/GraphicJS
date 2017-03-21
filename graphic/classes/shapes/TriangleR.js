@@ -42,19 +42,19 @@ export default class TraingleR extends Graphic {
     DATA METHODS
   **** */
   // get the length of the triangle's hypotenuse
-  hyp() {
+  _hyp() {
     return Math.sqrt((this.base * this.base) + (this.height * this.height));
   }
   // get area of the triangle
-  area() {
+  _area() {
     return (this.height * this.base) * .5;
   }
   // get the perimeter of the triangle
-  perim() {
+  _perim() {
     return this.base + this.height + this.hyp();
   }
   // get the three angels of the triangle, returned as an array (right angle first and proceeding clockwise)
-  angles(mode = 'rad') {
+  _angles(mode = 'rad') {
     let units = mode.toUpperCase();
     let rightAngle = null, firstAngle = null, secondAngle = null;
     if (units === 'RAD' || units === 'RADS' || units === 'R' || units === 'RADIANS') {

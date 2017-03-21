@@ -43,15 +43,15 @@ export default class TraingleI extends Graphic {
     DATA METHODS
   **** */
   // get area of the triangle
-  area() {
+  _area() {
     return (((this.base * .5) * this.height) * .5) * 2;
   }
   // get the perimeter of the triangle
-  perim() {
+  _perim() {
     return (this.side * 2) + this.base;
   }
   // get the three angles of the triangle, returned as an array (2 angles should be congruent)
-  angles(mode = 'rad') {
+  _angles(mode = 'rad') {
     let units = mode.toUpperCase();
     let firstAngle = null, secondAngle = null, thirdAngle = null;
     if (units === 'RAD' || units === 'RADS' || units === 'R' || units === 'RADIANS') {

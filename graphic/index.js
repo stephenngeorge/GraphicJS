@@ -5,6 +5,7 @@ import rotate from './functions/Globals/rotate';
 import aside from './functions/Globals/aside';
 import canvas from './functions/Globals/canvas';
 import map from './functions/Globals/map';
+import convert from './functions/Globals/convert';
 import bgSolid from './functions/backgrounds/bgSolid';
 import vector from './functions/vector';
 import line from './functions/shapes/line';
@@ -34,6 +35,7 @@ const library = {
   rotate,
   aside,
   map,
+  convert,
   canvas,
   bgSolid,
   vector,
