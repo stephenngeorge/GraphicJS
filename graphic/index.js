@@ -6,6 +6,7 @@ import aside from './functions/Structure/aside';
 import canvas from './functions/Structure/canvas';
 import map from './functions/Helpers/map';
 import convert from './functions/Helpers/convert';
+import date from './functions/Helpers/date';
 import bgSolid from './functions/backgrounds/bgSolid';
 import vector from './functions/vector';
 import line from './functions/shapes/line';
@@ -40,6 +41,7 @@ const library = {
   aside,
   map,
   convert,
+  date,
   canvas,
   bgSolid,
   vector,

@@ -142,7 +142,7 @@ function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{default:t}}
 // create new circle, draw to the given context
 function r(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:42,n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:42,i=arguments.length>3&&void 0!==arguments[3]?arguments[3]:21;return new s.default(t,e,n,i)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=r;var o=n(3),s=i(o)},/* 12 */
 /***/
-function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{default:t}}var r=n(32),o=i(r),s=n(35),u=i(s),a=n(33),l=i(a),c=n(34),h=i(c),f=n(31),d=i(f),p=n(30),v=i(p),y=n(19),b=i(y),g=n(28),_=i(g),x=n(20),w=i(x),O=n(21),P=i(O),m=n(23),M=i(m),j=n(24),E=i(j),k=n(11),R=i(k),T=n(22),S=i(T),D=n(27),C=i(D),I=n(25),A=i(I),G=n(26),F=i(G),W=n(37),N=i(W),q=n(39),B=i(q),z=n(0),U=i(z),H=n(1),L=i(H),V=n(4),X=i(V),Y=n(5),J=i(Y),K=n(6),Q=i(K),Z=n(7),$=i(Z),tt=n(3),et=i(tt),nt=n(2),it=i(nt),rt=n(10),ot=i(rt),st=n(8),ut=i(st),at=n(9),lt=i(at),ct=n(36),ht=i(ct),ft=n(38),dt=i(ft),pt={animate:o.default,rotate:u.default,aside:l.default,map:d.default,convert:v.default,canvas:h.default,bgSolid:b.default,vector:_.default,line:w.default,point:P.default,sector:M.default,segment:E.default,circle:R.default,rect:S.default,triangleR:C.default,triangleE:A.default,triangleI:F.default,bezier:N.default,curve:B.default,classes:{Graphic:U.default,Vector:L.default,Line:X.default,Point:J.default,Sector:Q.default,Segment:$.default,Circle:et.default,Rect:it.default,TriangleR:ot.default,TriangleE:ut.default,TriangleI:lt.default,Bezier:ht.default,Curve:dt.default}};t.exports=pt},/* 13 */
+function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{default:t}}var r=n(32),o=i(r),s=n(35),u=i(s),a=n(33),l=i(a),c=n(34),h=i(c),f=n(31),d=i(f),p=n(30),v=i(p),y=n(40),b=i(y),g=n(19),_=i(g),x=n(28),w=i(x),O=n(20),P=i(O),m=n(21),M=i(m),j=n(23),E=i(j),k=n(24),R=i(k),T=n(11),S=i(T),D=n(22),C=i(D),I=n(27),A=i(I),G=n(25),F=i(G),W=n(26),N=i(W),q=n(37),B=i(q),z=n(39),U=i(z),H=n(0),L=i(H),V=n(1),Y=i(V),X=n(4),J=i(X),K=n(5),Q=i(K),Z=n(6),$=i(Z),tt=n(7),et=i(tt),nt=n(3),it=i(nt),rt=n(2),ot=i(rt),st=n(10),ut=i(st),at=n(8),lt=i(at),ct=n(9),ht=i(ct),ft=n(36),dt=i(ft),pt=n(38),vt=i(pt),yt={animate:o.default,rotate:u.default,aside:l.default,map:d.default,convert:v.default,date:b.default,canvas:h.default,bgSolid:_.default,vector:w.default,line:P.default,point:M.default,sector:E.default,segment:R.default,circle:S.default,rect:C.default,triangleR:A.default,triangleE:F.default,triangleI:N.default,bezier:B.default,curve:U.default,classes:{Graphic:L.default,Vector:Y.default,Line:J.default,Point:Q.default,Sector:$.default,Segment:et.default,Circle:it.default,Rect:ot.default,TriangleR:ut.default,TriangleE:lt.default,TriangleI:ht.default,Bezier:dt.default,Curve:vt.default}};t.exports=yt},/* 13 */
 ,/* 14 */
 ,/* 15 */
 ,/* 16 */
@@ -182,7 +182,7 @@ function r(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:42,n=
 /***/
 function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{default:t}}function r(t,e){return new s.default(t,e)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=r;var o=n(1),s=i(o)},/* 29 */
 /***/
-function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{default:t}}var r=n(12),o=i(r),s=o.default.canvas({el:document.getElementById("canvas-container")}),u=s.c;s.width,s.height,s.id;o.default.bgSolid(u),o.default.curve(u,50,50,300,200,300,50).draw()},/* 30 */
+function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{default:t}}var r=n(12),o=i(r),s=o.default.canvas({el:document.getElementById("canvas-container")}),u=s.c;s.width,s.height,s.id;o.default.bgSolid(u);var a=o.default.date(),l=a.day,c=a.month,h=a.year;console.log("today is: "+l+", "+c+", "+h)},/* 30 */
 /***/
 function(t,e,n){"use strict";
 // convert degrees in to radians
@@ -226,5 +226,7 @@ return s(e,t),u(e,[{key:"draw",value:function(){var t=arguments.length>0&&void 0
 /***/
 function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{default:t}}
 // create new Bezier, draw to the given context
-function r(t,e,n,i,r,o,u){return new s.default(t,e,n,i,r,o,u)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=r;var o=n(38),s=i(o)}]);
+function r(t,e,n,i,r,o,u){return new s.default(t,e,n,i,r,o,u)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=r;var o=n(38),s=i(o)},/* 40 */
+/***/
+function(t,e,n){"use strict";function i(){var t=new Date;return{millis:t.getMilliseconds(),seconds:t.getSeconds(),minutes:t.getMinutes(),hours:t.getHours(),day:t.getDate(),month:t.getMonth()+1,year:t.getFullYear(),today:t}}Object.defineProperty(e,"__esModule",{value:!0}),e.default=i}]);
 //# sourceMappingURL=scripts.js.map

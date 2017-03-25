@@ -5,4 +5,6 @@ const { c, width, height, id } = g.canvas({
 });
 
 g.bgSolid(c);
-g.curve(c, 50, 50, 300, 200, 300, 50).draw();
+const { day, month, year } = g.date();
+
+console.log(`today is: ${day}, ${month}, ${year}`);
