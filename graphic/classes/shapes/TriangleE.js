@@ -11,7 +11,6 @@ export default class TraingleE extends Graphic {
     this.pos = new Vector(x, y);
     this.side = side;
     this.height = Math.sqrt((this.side * this.side) - ((this.side * .5) * (this.side * .5)));
-    this.vel = new Vector(1, 1);
   }
   /* ****
     DESIGN METHODS

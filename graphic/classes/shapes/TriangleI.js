@@ -12,7 +12,6 @@ export default class TraingleI extends Graphic {
     this.base = base;
     this.side = side;
     this.height = Math.sqrt((this.side * this.side) - ((this.base * .5) * (this.base * .5)));
-    this.vel = new Vector(1, 1);
   }
   /* ****
     DESIGN METHODS

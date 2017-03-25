@@ -11,7 +11,6 @@ export default class Sector extends Graphic {
     this.r = r;
     this.angle = angle;
     this.size = size;
-    this.vel = new Vector(1, 1);
   }
   /* ****
     DESIGN METHODS

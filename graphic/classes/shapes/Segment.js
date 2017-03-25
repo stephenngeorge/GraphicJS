@@ -19,7 +19,6 @@ export default class Segment extends Graphic {
         message: 'mathematical problems - chord length (final argument), cannot exceed diameter (radius * 2). Consult docs for more information'
       })
     }
-    this.vel = new Vector(1, 1);
   }
   /* ****
     DESIGN METHODS

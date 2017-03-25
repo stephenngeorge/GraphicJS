@@ -10,7 +10,6 @@ export default class Rect extends Graphic {
     this.pos = new Vector(x, y);
     this.width = width;
     this.height = height;
-    this.vel = new Vector(1, 1);
   }
   /* ****
     DESIGN METHODS

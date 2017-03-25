@@ -10,7 +10,6 @@ export default class Point extends Graphic {
     super();
     this.ctx = ctx;
     this.pos = new Vector(x, y);
-    this.vel = new Vector(1, 1);
   }
   /* ****
     DESIGN METHODS

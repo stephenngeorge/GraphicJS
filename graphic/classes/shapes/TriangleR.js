@@ -11,7 +11,6 @@ export default class TraingleR extends Graphic {
     this.pos = new Vector(x, y);
     this.base = base;
     this.height = height;
-    this.vel = new Vector(1, 1);
   }
   /* ****
     DESIGN METHODS

@@ -11,7 +11,6 @@ export default class Circle extends Graphic {
     this.x = this.pos.x;
     this.y = this.pos.y;
     this.r = r;
-    this.vel = new Vector(1, 1);
   }
   /* ****
     DESIGN METHODS
