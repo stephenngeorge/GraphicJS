@@ -20,6 +20,7 @@ import triangleE from './functions/shapes/triangleE';
 import triangleI from './functions/shapes/triangleI';
 import bezier from './functions/shapes/bezier';
 import curve from './functions/shapes/curve';
+import text from './functions/text/text';
 
 import Graphic from './classes/Graphic';
 import Vector from './classes/Vector';
@@ -34,6 +35,7 @@ import TriangleE from './classes/shapes/TriangleE';
 import TriangleI from './classes/shapes/TriangleI';
 import Bezier from './classes/shapes/Bezier';
 import Curve from './classes/shapes/Curve';
+import Text from './classes/Text';
 
 const library = {
   animate,
@@ -56,6 +58,7 @@ const library = {
   triangleI,
   bezier,
   curve,
+  text,
   classes: {
     Graphic,
     Vector,
@@ -69,7 +72,8 @@ const library = {
     TriangleE,
     TriangleI,
     Bezier,
-    Curve
+    Curve,
+    Text
   }
 }
 

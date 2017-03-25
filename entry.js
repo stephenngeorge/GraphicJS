@@ -5,6 +5,5 @@ const { c, width, height, id } = g.canvas({
 });
 
 g.bgSolid(c);
-const { day, month, year } = g.date();
 
-console.log(`today is: ${day}, ${month}, ${year}`);
+g.text(c, "word", width * .5, height * .5).align('center').baseline('middle').font({ size: '50px', family: 'tahoma' }).outline();
