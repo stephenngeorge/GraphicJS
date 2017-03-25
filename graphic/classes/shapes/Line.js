@@ -7,8 +7,8 @@ export default class Line extends Graphic {
   constructor(ctx, xFrom, yFrom, xTo, yTo) {
     super();
     this.ctx = ctx;
-    this.posFrom = new Vector(xFrom, yFrom);
-    this.posTo = new Vector(xTo, yTo);
+    this.start = new Vector(xFrom, yFrom);
+    this.end = new Vector(xTo, yTo);
   }
   /* ****
     DESIGN METHODS

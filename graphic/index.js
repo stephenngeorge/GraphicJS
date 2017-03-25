@@ -17,6 +17,8 @@ import rect from './functions/shapes/rect';
 import triangleR from './functions/shapes/triangleR';
 import triangleE from './functions/shapes/triangleE';
 import triangleI from './functions/shapes/triangleI';
+import bezier from './functions/shapes/bezier';
+import curve from './functions/shapes/curve';
 
 import Graphic from './classes/Graphic';
 import Vector from './classes/Vector';
@@ -29,6 +31,8 @@ import Rect from './classes/shapes/Rect';
 import TriangleR from './classes/shapes/TriangleR';
 import TriangleE from './classes/shapes/TriangleE';
 import TriangleI from './classes/shapes/TriangleI';
+import Bezier from './classes/shapes/Bezier';
+import Curve from './classes/shapes/Curve';
 
 const library = {
   animate,
@@ -48,6 +52,8 @@ const library = {
   triangleR,
   triangleE,
   triangleI,
+  bezier,
+  curve,
   classes: {
     Graphic,
     Vector,
@@ -59,7 +65,9 @@ const library = {
     Rect,
     TriangleR,
     TriangleE,
-    TriangleI
+    TriangleI,
+    Bezier,
+    Curve
   }
 }
 
