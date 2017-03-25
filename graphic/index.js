@@ -1,11 +1,11 @@
 'use strict';
 
-import animate from './functions/Globals/animate';
-import rotate from './functions/Globals/rotate';
-import aside from './functions/Globals/aside';
-import canvas from './functions/Globals/canvas';
-import map from './functions/Globals/map';
-import convert from './functions/Globals/convert';
+import animate from './functions/Structure/animate';
+import rotate from './functions/Structure/rotate';
+import aside from './functions/Structure/aside';
+import canvas from './functions/Structure/canvas';
+import map from './functions/Helpers/map';
+import convert from './functions/Helpers/convert';
 import bgSolid from './functions/backgrounds/bgSolid';
 import vector from './functions/vector';
 import line from './functions/shapes/line';

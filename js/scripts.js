@@ -142,31 +142,13 @@ function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{default:t}}
 // create new circle, draw to the given context
 function o(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:42,n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:42,i=arguments.length>3&&void 0!==arguments[3]?arguments[3]:21;return new s.default(t,e,n,i)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=o;var r=n(3),s=i(r)},/* 12 */
 /***/
-function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{default:t}}var o=n(13),r=i(o),s=n(18),a=i(s),u=n(14),l=i(u),c=n(15),h=i(c),f=n(17),d=i(f),p=n(16),v=i(p),y=n(19),b=i(y),g=n(28),x=i(g),_=n(20),w=i(_),O=n(21),P=i(O),m=n(23),M=i(m),j=n(24),E=i(j),R=n(11),k=i(R),T=n(22),S=i(T),D=n(27),I=i(D),A=n(25),C=i(A),G=n(26),F=i(G),W=n(0),N=i(W),q=n(1),B=i(q),U=n(4),z=i(U),H=n(5),L=i(H),V=n(6),X=i(V),Y=n(7),J=i(Y),K=n(3),Q=i(K),Z=n(2),$=i(Z),tt=n(10),et=i(tt),nt=n(8),it=i(nt),ot=n(9),rt=i(ot),st={animate:r.default,rotate:a.default,aside:l.default,map:d.default,convert:v.default,canvas:h.default,bgSolid:b.default,vector:x.default,line:w.default,point:P.default,sector:M.default,segment:E.default,circle:k.default,rect:S.default,triangleR:I.default,triangleE:C.default,triangleI:F.default,classes:{Graphic:N.default,Vector:B.default,Line:z.default,Point:L.default,Sector:X.default,Segment:J.default,Circle:Q.default,Rect:$.default,TriangleR:et.default,TriangleE:it.default,TriangleI:rt.default}};t.exports=st},/* 13 */
-/***/
-function(t,e,n){"use strict";function i(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:60,n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:null,i=0;return new Promise(function(o,r){var s=setInterval(function(){t(),i++,i===n&&(clearInterval(s),o(i)),18e5===i&&r({status:"ANIMATION STOPPED",message:"animation exceeded maximum length (30 mins), if you require a longer interval please consult the docs"})},1e3/e)})}Object.defineProperty(e,"__esModule",{value:!0}),e.default=i},/* 14 */
-/***/
-function(t,e,n){"use strict";function i(t,e){return new Promise(function(n,i){t.save(),e(),t.restore(),n({status:"RESOLVED",message:"aside completed"})})}Object.defineProperty(e,"__esModule",{value:!0}),e.default=i},/* 15 */
-/***/
-function(t,e,n){"use strict";function i(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},e=t.width,n=void 0===e?600:e,i=t.height,o=void 0===i?400:i,r=t.id,s=void 0===r?"canvas":r,a=t.el,u=void 0===a?document.body:a,l=document.createElement("canvas");
-// return object with canvas data
-// set canvas attributes (defaults declared in function params)
-// insert canvas element into DOM, attached to passed element (document body by default)
-return l.width=n,l.height=o,l.id=s,u.appendChild(l),{c:l.getContext("2d"),width:l.width,height:l.height,id:l.id}}Object.defineProperty(e,"__esModule",{value:!0}),e.default=i},/* 16 */
-/***/
-function(t,e,n){"use strict";
-// convert degrees in to radians
-var i=function(t){return t*(Math.PI/180)},o=function(t){return t*(180/Math.PI)};t.exports={radians:i,degrees:o}},/* 17 */
-/***/
-function(t,e,n){"use strict";function i(t,e,n,i,o){
-// get the ranges passed in from minimum and maximum values
-var r=Math.abs(e-n),s=Math.abs(i-o),a=e<n?e:n,u=i<o?i:o,l=t-a;if(!(l<0)){
-// get the passed value as a percentage of the first range
-var c=(t-a)/r*100;
-// return that same percentage [line20] value of second range
-return s/100*c+u}console.error({status:"ERROR",message:"Could not calculate - the initial value must be within the first range"})}Object.defineProperty(e,"__esModule",{value:!0}),e.default=i},/* 18 */
-/***/
-function(t,e,n){"use strict";function i(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=e.units,i=void 0===n?"rad":n,o=e.angle,r=void 0===o?Math.PI/2:o,s=e.code,a=void 0===s?function(){return console.log("rotated by: "+r)}:s,u=i.toUpperCase();return new Promise(function(e,n){"RAD"===u||"RADS"===u||"R"===u||"RADIANS"===u?(t.save(),t.rotate(r),a(),t.restore(),e("reset transformations")):"DEG"===u||"DEGS"===u||"D"===u||"DEGREES"===u?(t.save(),t.rotate(r*(Math.PI/180)),a(),t.restore(),e("reset transformations")):n({status:"ERROR",message:'units not recognised, please specify "deg" or "rad"'})})}Object.defineProperty(e,"__esModule",{value:!0}),e.default=i},/* 19 */
+function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{default:t}}var o=n(32),r=i(o),s=n(35),a=i(s),u=n(33),l=i(u),c=n(34),h=i(c),f=n(31),d=i(f),p=n(30),v=i(p),y=n(19),b=i(y),g=n(28),x=i(g),_=n(20),w=i(_),O=n(21),P=i(O),m=n(23),M=i(m),j=n(24),E=i(j),R=n(11),k=i(R),T=n(22),S=i(T),D=n(27),I=i(D),A=n(25),C=i(A),G=n(26),F=i(G),W=n(0),N=i(W),q=n(1),B=i(q),U=n(4),z=i(U),H=n(5),L=i(H),V=n(6),X=i(V),Y=n(7),J=i(Y),K=n(3),Q=i(K),Z=n(2),$=i(Z),tt=n(10),et=i(tt),nt=n(8),it=i(nt),ot=n(9),rt=i(ot),st={animate:r.default,rotate:a.default,aside:l.default,map:d.default,convert:v.default,canvas:h.default,bgSolid:b.default,vector:x.default,line:w.default,point:P.default,sector:M.default,segment:E.default,circle:k.default,rect:S.default,triangleR:I.default,triangleE:C.default,triangleI:F.default,classes:{Graphic:N.default,Vector:B.default,Line:z.default,Point:L.default,Sector:X.default,Segment:J.default,Circle:Q.default,Rect:$.default,TriangleR:et.default,TriangleE:it.default,TriangleI:rt.default}};t.exports=st},/* 13 */
+,/* 14 */
+,/* 15 */
+,/* 16 */
+,/* 17 */
+,/* 18 */
+,/* 19 */
 /***/
 function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{default:t}}
 // draw fill rectangle full size of canvas, colour default to light grey
@@ -200,5 +182,29 @@ function o(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:42,n=
 /***/
 function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{default:t}}function o(t,e){return new s.default(t,e)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=o;var r=n(1),s=i(r)},/* 29 */
 /***/
-function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{default:t}}var o=n(12),r=i(o),s=r.default.canvas({el:document.getElementById("canvas-container")});s.c,s.width,s.height,s.id}]);
+function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{default:t}}var o=n(12),r=i(o),s=r.default.canvas({el:document.getElementById("canvas-container")});s.c,s.width,s.height,s.id},/* 30 */
+/***/
+function(t,e,n){"use strict";
+// convert degrees in to radians
+var i=function(t){return t*(Math.PI/180)},o=function(t){return t*(180/Math.PI)};t.exports={radians:i,degrees:o}},/* 31 */
+/***/
+function(t,e,n){"use strict";function i(t,e,n,i,o){
+// get the ranges passed in from minimum and maximum values
+var r=Math.abs(e-n),s=Math.abs(i-o),a=e<n?e:n,u=i<o?i:o,l=t-a;if(!(l<0)){
+// get the passed value as a percentage of the first range
+var c=(t-a)/r*100;
+// return that same percentage [line20] value of second range
+return s/100*c+u}console.error({status:"ERROR",message:"Could not calculate - the initial value must be within the first range"})}Object.defineProperty(e,"__esModule",{value:!0}),e.default=i},/* 32 */
+/***/
+function(t,e,n){"use strict";function i(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:60,n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:null,i=0;return new Promise(function(o,r){var s=setInterval(function(){t(),i++,i===n&&(clearInterval(s),o(i)),18e5===i&&r({status:"ANIMATION STOPPED",message:"animation exceeded maximum length (30 mins), if you require a longer interval please consult the docs"})},1e3/e)})}Object.defineProperty(e,"__esModule",{value:!0}),e.default=i},/* 33 */
+/***/
+function(t,e,n){"use strict";function i(t,e){return new Promise(function(n,i){t.save(),e(),t.restore(),n({status:"RESOLVED",message:"aside completed"})})}Object.defineProperty(e,"__esModule",{value:!0}),e.default=i},/* 34 */
+/***/
+function(t,e,n){"use strict";function i(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},e=t.width,n=void 0===e?600:e,i=t.height,o=void 0===i?400:i,r=t.id,s=void 0===r?"canvas":r,a=t.el,u=void 0===a?document.body:a,l=document.createElement("canvas");
+// return object with canvas data
+// set canvas attributes (defaults declared in function params)
+// insert canvas element into DOM, attached to passed element (document body by default)
+return l.width=n,l.height=o,l.id=s,u.appendChild(l),{c:l.getContext("2d"),width:l.width,height:l.height,id:l.id}}Object.defineProperty(e,"__esModule",{value:!0}),e.default=i},/* 35 */
+/***/
+function(t,e,n){"use strict";function i(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=e.units,i=void 0===n?"rad":n,o=e.angle,r=void 0===o?Math.PI/2:o,s=e.code,a=void 0===s?function(){return console.log("rotated by: "+r)}:s,u=i.toUpperCase();return new Promise(function(e,n){"RAD"===u||"RADS"===u||"R"===u||"RADIANS"===u?(t.save(),t.rotate(r),a(),t.restore(),e("reset transformations")):"DEG"===u||"DEGS"===u||"D"===u||"DEGREES"===u?(t.save(),t.rotate(r*(Math.PI/180)),a(),t.restore(),e("reset transformations")):n({status:"ERROR",message:'units not recognised, please specify "deg" or "rad"'})})}Object.defineProperty(e,"__esModule",{value:!0}),e.default=i}]);
 //# sourceMappingURL=scripts.js.map
