@@ -17,8 +17,8 @@ export default class Line extends Graphic {
   draw({weight = 2, colour = '#808080'} = {}) {
     this.ctx.beginPath();
     this.ctx.lineWidth = weight;
-    this.ctx.moveTo(this.posFrom.x, this.posFrom.y);
-    this.ctx.lineTo(this.posTo.x, this.posTo.y);
+    this.ctx.moveTo(this.start.x, this.start.y);
+    this.ctx.lineTo(this.end.x, this.end.y);
     this.ctx.strokeStyle = colour;
     this.ctx.stroke();
     return this;
@@ -28,21 +28,21 @@ export default class Line extends Graphic {
   **** */
   // get length of line (function is called 'dist()' as 'length' is a reserved word in JS)
   _dist() {
-    let xDiff = Math.abs(this.posFrom.x - this.posTo.x);
-    let yDiff = Math.abs(this.posFrom.y - this.posTo.y);
+    let xDiff = Math.abs(this.start.x - this.end.x);
+    let yDiff = Math.abs(this.start.y - this.end.y);
     let lineSqr = (xDiff * xDiff) + (yDiff * yDiff);
     return Math.sqrt(lineSqr);
   }
   // get gradient of line
   _grad() {
-    let xDiff = Math.abs(this.posFrom.x - this.posTo.x);
-    let yDiff = Math.abs(this.posFrom.y - this.posTo.y);
+    let xDiff = Math.abs(this.start.x - this.end.x);
+    let yDiff = Math.abs(this.start.y - this.end.y);
     return yDiff / xDiff;
   }
   // get angle of line relative to x-axis (x-axis imaginery line running parrallel to top of canvas, touching the origin of the line [y of x-axis === this.yFrom])
   _xAngle(mode = 'rad') {
     let units = mode.toUpperCase();
-    let slope = this.grad();
+    let slope = this._grad();
     if (units === 'RAD' || units === 'R' || units === 'RADIANS') {
       return Math.atan(slope);
     }
@@ -62,10 +62,10 @@ export default class Line extends Graphic {
   _yAngle(mode = 'rad') {
     let units = mode.toUpperCase();
     if (units === 'RAD' || units === 'RADS' || units === 'R' || units === 'RADIANS') {
-      return (Math.PI / 2) - this.xAngle();
+      return (Math.PI / 2) - this._xAngle();
     }
     else if (units === 'DEG' || units === 'DEGS' || units === 'D' || units === 'DEGREES') {
-      let radians = (Math.PI / 2) - this.xAngle();
+      let radians = (Math.PI / 2) - this._xAngle();
       return radians * (180 / Math.PI);
     }
     else {
