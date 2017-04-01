@@ -21,6 +21,7 @@ import triangleI from './functions/shapes/triangleI';
 import bezier from './functions/shapes/bezier';
 import curve from './functions/shapes/curve';
 import text from './functions/text/text';
+import lineGraph from './functions/graphs/lineGraph';
 
 import Graphic from './classes/Graphic';
 import Vector from './classes/Vector';
@@ -36,8 +37,9 @@ import TriangleI from './classes/shapes/TriangleI';
 import Bezier from './classes/shapes/Bezier';
 import Curve from './classes/shapes/Curve';
 import Text from './classes/Text';
+import LineGraph from './classes/graphs/LineGraph';
 
-const library = {
+const g = {
   animate,
   rotate,
   aside,
@@ -59,6 +61,7 @@ const library = {
   bezier,
   curve,
   text,
+  lineGraph,
   classes: {
     Graphic,
     Vector,
@@ -73,9 +76,10 @@ const library = {
     TriangleI,
     Bezier,
     Curve,
-    Text
+    Text,
+    LineGraph
   }
 }
 
 
-module.exports = library;
+module.exports = g;
