@@ -9,6 +9,7 @@ import convert from './functions/Helpers/convert';
 import date from './functions/Helpers/date';
 import bgSolid from './functions/backgrounds/bgSolid';
 import vector from './functions/vector';
+import grid from './functions/grid';
 import line from './functions/shapes/line';
 import point from './functions/shapes/point';
 import sector from './functions/shapes/sector';
@@ -25,6 +26,7 @@ import lineGraph from './functions/graphs/lineGraph';
 
 import Graphic from './classes/Graphic';
 import Vector from './classes/Vector';
+import Grid from './classes/Grid';
 import Line from './classes/shapes/Line';
 import Point from './classes/shapes/Point';
 import Sector from './classes/shapes/Sector';
@@ -49,6 +51,7 @@ const g = {
   canvas,
   bgSolid,
   vector,
+  grid,
   line,
   point,
   sector,
@@ -65,6 +68,7 @@ const g = {
   classes: {
     Graphic,
     Vector,
+    Grid,
     Line,
     Point,
     Sector,
