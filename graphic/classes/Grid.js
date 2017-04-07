@@ -10,7 +10,7 @@ export default class Grid extends Graphic {
     this.rows = rows;
     this.grid = [];
   }
-
+  // get data for cell positions (returned as a nested array)
   calc() {
     let width = this.ctx.canvas.width, height = this.ctx.canvas.height;
     for (let i = 0; i < (width / this.cols); i++) {
@@ -22,8 +22,11 @@ export default class Grid extends Graphic {
     }
     return this;
   }
-
-  draw({weight = 1, colour = '#808080'} = {}) {
+  /* ****
+    DESIGN METHODS
+  **** */
+  // draw lines to show grid layout
+  draw({weight = 1, colour = 'rgba(127, 127, 127, .4)'} = {}) {
     this.grid.forEach(col => {
       this.ctx.beginPath();
       this.ctx.moveTo(col.x, 0);
@@ -41,5 +44,20 @@ export default class Grid extends Graphic {
       });
     });
     return this;
+  }  
+  /* ****
+    DATA METHODS
+  **** */
+  _numCells() {
+    return (this.ctx.canvas.width / this.cols) * (this.ctx.canvas.height / this.rows);
+  }
+  _cell({x = 0, y = 0, colour = '#FFC0CB'} = {}, mode = null) {
+    let cellX = this.grid[x].x;
+    let cellY = this.grid[x].rows[y].y;
+    if (mode === 'highlight') {
+      this.ctx.fillStyle = colour;
+      this.ctx.fillRect(cellX, cellY, this.cols, this.rows);
+    }
+    return { x: cellX, y: cellY };
   }
 }

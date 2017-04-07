@@ -4,15 +4,15 @@ import Graphic from '../Graphic';
 import point from '../../functions/shapes/point';
 
 export default class LineGraph extends Graphic {
-  constructor(ctx, m, c, exp, resolutionX, resolutionY, mode) {
+  constructor(ctx, m, c, exp, sfX, sfY, mode) {
     super();
     this.ctx = ctx;
     this.m = m;
     this.c = c;
     this.exp = exp;
     this.path = [];
-    this.resolutionX = resolutionX;
-    this.resolutionY = resolutionY;
+    this.sfX = sfX;
+    this.sfY = sfY;
     this.mode = mode;
   }
 
@@ -21,8 +21,8 @@ export default class LineGraph extends Graphic {
     let minX = this.mode === 'cartesian' ? -width * .5 : 0;
     let maxX = this.mode === 'cartesian' ? width * .5 : width;
     for (let i = minX; i < maxX; i++) {
-      let y = ((this.m * Math.pow(i, this.exp)) + this.c) * this.resolutionY;
-      this.path.push(point(this.ctx, i * this.resolutionX, y).draw());
+      let y = ((this.m * Math.pow(i, this.exp)) + this.c) * this.sfY;
+      this.path.push(point(this.ctx, i * this.sfX, y).draw());
     }
     return this;
   }
