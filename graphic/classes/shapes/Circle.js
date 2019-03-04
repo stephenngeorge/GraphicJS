@@ -8,6 +8,7 @@ export default class Circle extends Graphic {
     super();
     this.ctx = ctx;
     this.pos = new Vector(x, y);
+    this.vel = new Vector(0, 0);
     this.r = r;
   }
   /* ****
