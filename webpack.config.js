@@ -6,19 +6,15 @@ module.exports = {
   entry: path.join(__dirname, 'entry.js'),
   output: {
     publicPath: '/',
-    path: path.join(__dirname, 'js'),
+    path: path.join(__dirname, 'build'),
     filename: 'scripts.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          cacheDirectory: true,
-          presets: ['es2015', 'stage-2']
-        }
+        loader: 'babel-loader'
       }
     ]
   },
