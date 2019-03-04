@@ -1,5 +1,5 @@
-import Graphic from '../Graphic'
-import Vector from '../Vector'
+import Graphic from '../../Graphic'
+import Vector from '../../Vector'
 
 export default class Curve extends Graphic {
    constructor(ctx, xFrom, yFrom, xCtrl, yCtrl, xTo, yTo) {
@@ -9,7 +9,6 @@ export default class Curve extends Graphic {
      this.ctrlPoint = new Vector(xCtrl, yCtrl)
      this.end = new Vector(xTo, yTo)
    }
-
    /* ****
      DESIGN METHODS
    **** */
@@ -23,5 +22,4 @@ export default class Curve extends Graphic {
      this.ctx.stroke()
      return this;
    }
-
 }

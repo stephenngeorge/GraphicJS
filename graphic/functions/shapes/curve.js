@@ -1,4 +1,3 @@
-'use strict';
 
 import Curve from '../../classes/shapes/Curve';
 // create new Bezier, draw to the given context

@@ -1,4 +1,3 @@
-'use strict';
 
 import Graphic from '../Graphic';
 import Vector from '../Vector';

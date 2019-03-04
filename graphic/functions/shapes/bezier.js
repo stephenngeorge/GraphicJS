@@ -1,4 +1,3 @@
-'use strict';
 
 import Bezier from '../../classes/shapes/Bezier';
 // create new Bezier, draw to the given context

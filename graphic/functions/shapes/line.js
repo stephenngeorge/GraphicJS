@@ -1,4 +1,3 @@
-'use strict';
 
 import Line from '../../classes/shapes/Line';
 // create new line, draw to the given context

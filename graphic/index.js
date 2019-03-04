@@ -1,45 +1,28 @@
+// import structure
 import animate from './functions/Structure/animate'
 import rotate from './functions/Structure/rotate'
 import aside from './functions/Structure/aside'
 import canvas from './functions/Structure/canvas'
+
+// import helpers
 import map from './functions/Helpers/map'
 import convert from './functions/Helpers/convert'
 import date from './functions/Helpers/date'
+
+// import fundamentals
 import bgSolid from './functions/backgrounds/bgSolid'
 import vector from './functions/vector'
 import grid from './functions/grid'
-import line from './functions/shapes/line'
-import point from './functions/shapes/point'
-import sector from './functions/shapes/sector'
-import segment from './functions/shapes/segment'
-import circle from './functions/shapes/circle'
-import rect from './functions/shapes/rect'
-import triangleR from './functions/shapes/triangleR'
-import triangleE from './functions/shapes/triangleE'
-import triangleI from './functions/shapes/triangleI'
-import bezier from './functions/shapes/bezier'
-import curve from './functions/shapes/curve'
-import text from './functions/text/text'
-import lineGraph from './functions/graphs/lineGraph'
+
+// import shapes
+import shapes from './Shapes'
 
 import Graphic from './classes/Graphic'
 import Vector from './classes/Vector'
 import Grid from './classes/Grid'
-import Line from './classes/shapes/Line'
-import Point from './classes/shapes/Point'
-import Sector from './classes/shapes/Sector'
-import Segment from './classes/shapes/Segment'
-import Circle from './classes/shapes/Circle'
-import Rect from './classes/shapes/Rect'
-import TriangleR from './classes/shapes/TriangleR'
-import TriangleE from './classes/shapes/TriangleE'
-import TriangleI from './classes/shapes/TriangleI'
-import Bezier from './classes/shapes/Bezier'
-import Curve from './classes/shapes/Curve'
-import Text from './classes/Text'
-import LineGraph from './classes/graphs/LineGraph'
 
 const g = {
+  shapes,
   animate,
   rotate,
   aside,
@@ -50,38 +33,11 @@ const g = {
   bgSolid,
   vector,
   grid,
-  line,
-  point,
-  sector,
-  segment,
-  circle,
-  rect,
-  triangleR,
-  triangleE,
-  triangleI,
-  bezier,
-  curve,
-  text,
-  lineGraph,
   classes: {
     Graphic,
     Vector,
-    Grid,
-    Line,
-    Point,
-    Sector,
-    Segment,
-    Circle,
-    Rect,
-    TriangleR,
-    TriangleE,
-    TriangleI,
-    Bezier,
-    Curve,
-    Text,
-    LineGraph
+    Grid
   }
 }
-
 
 export default g

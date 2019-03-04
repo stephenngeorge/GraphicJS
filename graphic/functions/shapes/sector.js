@@ -1,4 +1,3 @@
-'use strict';
 
 import Sector from '../../classes/shapes/Sector';
 

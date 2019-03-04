@@ -1,5 +1,5 @@
-import Graphic from '../Graphic'
-import Vector from '../Vector'
+import Graphic from '../../Graphic'
+import Vector from '../../Vector'
 
 export default class Circle extends Graphic {
   constructor(ctx, x, y, r) {

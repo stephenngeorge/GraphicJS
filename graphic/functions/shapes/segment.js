@@ -1,4 +1,3 @@
-'use strict';
 
 import Segment from '../../classes/shapes/Segment';
 

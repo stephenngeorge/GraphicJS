@@ -1,4 +1,3 @@
-'use strict';
 
 import TriangleI from '../../classes/shapes/TriangleI';
 // create new right-angled triangle, draw to the given context
