@@ -1,5 +1,5 @@
 import Graphic from '../../Graphic'
-import Vector from '../../Vector'
+import Vector from '../../Globals/vector/vector.class'
 
 export default class Rect extends Graphic {
   constructor(ctx, x, y, width, height) {

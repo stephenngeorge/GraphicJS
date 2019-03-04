@@ -1,5 +1,5 @@
 import Graphic from '../../Graphic'
-import Vector from '../../Vector'
+import Vector from '../../Globals/vector/vector.class'
 
 export default class Bezier extends Graphic {
    constructor(ctx, xFrom, yFrom, xCtrl_1, yCtrl_1, xCtrl_2, yCtrl_2, xTo, yTo) {

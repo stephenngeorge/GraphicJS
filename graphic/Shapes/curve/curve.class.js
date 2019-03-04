@@ -1,5 +1,5 @@
 import Graphic from '../../Graphic'
-import Vector from '../../Vector'
+import Vector from '../../Globals/vector/vector.class'
 
 export default class Curve extends Graphic {
    constructor(ctx, xFrom, yFrom, xCtrl, yCtrl, xTo, yTo) {

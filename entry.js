@@ -1,19 +1,24 @@
 import g from './graphic'
-const { shapes } = g
+const {
+    backgrounds,
+    globals,
+    shapes,
+    structure
+} = g
 
-const { c, width, height } = g.canvas({
+const { c, width, height } = structure.canvas({
     width: 600,
     height: 600,
     id: 'canvas'
 })
 
-g.bgSolid(c)
+backgrounds.bgsolid(c)
 
 const ball = shapes.circle(c, width / 2, height / 2, 12)
-ball.vel = g.vector(1, 2)
+ball.vel = globals.vector(1, 2)
 
-g.animate(() => {
-    g.bgSolid(c)
+structure.animate(() => {
+    backgrounds.bgsolid(c)
     ball.pos.add(ball.vel)
     ball
         .draw('#333')

@@ -1,5 +1,5 @@
 import Graphic from '../../Graphic'
-import Vector from '../../Vector'
+import Vector from '../../Globals/vector/vector.class'
 
 // EQUILATERAL TRIANGLE
 export default class TraingleI extends Graphic {
