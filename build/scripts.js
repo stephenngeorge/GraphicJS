@@ -193,11 +193,11 @@ var o=n(47),i=n(60),r=n(0),s=n(42),c=n(55),a=n(19),u=n(51),h=n(45),l={background
 e.a=l},/* 16 */
 /***/
 function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});/* harmony import */
-var o=n(15),i=o.a.backgrounds,r=o.a.globals,s=o.a.helpers,c=o.a.shapes,a=o.a.structure,u=a.canvas({width:600,height:600,id:"canvas"}),h=u.c,l=u.width,f=u.height,p=c.circle(h,l/2,f/2,8);p.history=[],a.animate(function(){
+var o=n(15),i=o.a.backgrounds,r=o.a.globals,s=o.a.helpers,c=o.a.shapes,a=o.a.structure,u=a.canvas({width:400,height:400,id:"canvas"}),h=u.c,l=u.width,f=u.height,p=c.circle(h,l/2,f/2,8);p.history=[],a.animate(function(){
 // redraw background
 i.bgsolid(h),// add current ball position to history array
 p.history.push(p.pos.copy()),// limit history array to 100 items
-p.history.length>100&&p.history.shift(),// draw circle at each position in history
+p.history.length>200&&p.history.shift(),// draw circle at each position in history
 p.history.forEach(function(t){
 // set colour values based on pos co-ordinates
 var e=s._map(t.x,0,l,0,255),n=s._map(t.y,0,f,0,255);// draw circle with values determined above

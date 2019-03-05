@@ -9,8 +9,8 @@ const {
 
 // define canvas & get context, width & height variables
 const { c, width, height } = structure.canvas({
-    width: 600,
-    height: 600,
+    width: 400,
+    height: 400,
     id: 'canvas'
 })
 // global config variable for circle radius & vector size
@@ -26,7 +26,7 @@ structure.animate(() => {
     // add current ball position to history array
     walker.history.push(walker.pos.copy())
     // limit history array to 100 items
-    if (walker.history.length > 100) walker.history.shift()
+    if (walker.history.length > 200) walker.history.shift()
     // draw circle at each position in history
     walker.history.forEach(pos => {
         // set colour values based on pos co-ordinates
