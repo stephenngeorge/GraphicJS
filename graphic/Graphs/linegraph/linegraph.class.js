@@ -15,7 +15,7 @@ export default class LineGraph extends Graphic {
   }
 
   calc() {
-    let width = this.ctx.canvas.width, height = this.ctx.canvas.height
+    let width = this.ctx.canvas.width
     let minX = this.mode === 'cartesian' ? -width * .5 : 0
     let maxX = this.mode === 'cartesian' ? width * .5 : width
     for (let i = minX; i < maxX; i++) {

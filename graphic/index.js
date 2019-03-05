@@ -2,7 +2,7 @@ import backgrounds from './Backgrounds'
 // ^^^ { bgsolid }
 import globals from './Globals'
 // ^^^ { grid, vector, Classes: { Grid, Vector } }
-import Graphic from './classes/Graphic'
+import Graphic from './Graphic'
 import graphs from './Graphs'
 // ^^^ { linegraph, Classes: { Linegraph } }
 import helpers from './Helpers'
