@@ -193,7 +193,14 @@ var o=n(47),i=n(60),r=n(0),s=n(42),c=n(55),a=n(19),u=n(51),h=n(45),l={background
 e.a=l},/* 16 */
 /***/
 function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});/* harmony import */
-var o=n(15),i=o.a.backgrounds,r=o.a.globals,s=o.a.shapes,c=o.a.structure,a=c.canvas({width:600,height:600,id:"canvas"}),u=a.c,h=a.width,l=a.height;i.bgsolid(u);var f=s.circle(u,h/2,l/2,12);f.vel=r.vector(1,2),c.animate(function(){i.bgsolid(u),f.pos.add(f.vel),f.draw("#333").outline({weight:2,colour:"#fff"}).boundX(0+f.r,h-f.r).boundY(0+f.r,l-f.r)},120)},/* 17 */
+var o=n(15),i=o.a.backgrounds,r=o.a.globals,s=o.a.helpers,c=o.a.shapes,a=o.a.structure,u=a.canvas({width:600,height:600,id:"canvas"}),h=u.c,l=u.width,f=u.height;i.bgsolid(h);var p=c.circle(h,l/2,f/2,8);p.history=[],a.animate(function(){
+// redraw background
+i.bgsolid(h),// add current ball position to history array
+p.history.push(p.pos.copy()),// limit history array to 100 items
+p.history.length>100&&p.history.shift(),// draw circle at each position in history
+p.history.forEach(function(t){var e=s._map(t.x,0,l,0,255),n=s._map(t.y,0,f,0,255);c.circle(h,t.x,t.y,8).draw("rgba(".concat(e,", ").concat(n,", 0, .6)"))});// randomly create vector to be added to ball position
+var t=Math.random();p.vel=t<=.25?r.vector(0,16):t<=.5?r.vector(16,0):t<=.75?r.vector(0,-16):r.vector(-16,0),// draw ball at new position
+p.pos.add(p.vel),p.draw("#333").outline({weight:2,colour:"#fff"}).wrapX(0+p.r,l-p.r).wrapY(0+p.r,f-p.r)},10)},/* 17 */
 /***/
 function(t,e,n){"use strict";/* harmony import */
 var o=n(2);
@@ -208,7 +215,7 @@ var o=n(5);
 e.a=function(t,e,n,i,r,s,c){return new o.a(t,e,n,i,r,s,c)}},/* 19 */
 /***/
 function(t,e,n){"use strict";/* harmony import */
-var o=n(17),i=n(2),r=n(4),s=n(3),c=n(18),a=n(5),u=n(20),h=n(6),l=n(21),f=n(7),p=n(22),y=n(8),v=n(23),b=n(9),d=n(24),g=n(10),x=n(25),m=n(11),w=n(26),O=n(12),S=n(27),_=n(13),P={bezier:o.a,circle:r.a,curve:c.a,line:u.a,point:l.a,rect:p.a,sector:v.a,segment:d.a,triangleE:x.a,triangleI:w.a,triangleR:S.a,Classes:{Bezier:i.a,Circle:s.a,Curve:a.a,Line:h.a,Point:f.a,Rect:y.a,Sector:b.a,Segment:g.a,TriangleE:m.a,TriangleI:O.a,TriangleR:_.a}};/* harmony default export */
+var o=n(17),i=n(2),r=n(4),s=n(3),c=n(18),a=n(5),u=n(20),h=n(6),l=n(21),f=n(7),p=n(22),y=n(8),v=n(23),b=n(9),d=n(24),g=n(10),x=n(25),m=n(11),w=n(26),O=n(12),_=n(27),S=n(13),P={bezier:o.a,circle:r.a,curve:c.a,line:u.a,point:l.a,rect:p.a,sector:v.a,segment:d.a,triangleE:x.a,triangleI:w.a,triangleR:_.a,Classes:{Bezier:i.a,Circle:s.a,Curve:a.a,Line:h.a,Point:f.a,Rect:y.a,Sector:b.a,Segment:g.a,TriangleE:m.a,TriangleI:O.a,TriangleR:S.a}};/* harmony default export */
 e.a=P},/* 20 */
 /***/
 function(t,e,n){"use strict";/* harmony import */
@@ -267,7 +274,7 @@ n.d(e,"a",function(){return s});var s=/*#__PURE__*/
 function(){function t(){o(this,t)}return r(t,[{key:"cartesian",/* ****
       TRANSFORMATION METHODS
     **** */
-value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:0,e=this.ctx.canvas.clientHeight,n=this.ctx.canvas.clientWidth;switch(t){case 0:this.ctx.translate(.5*n,.5*e);break;case 1:this.ctx.translate(0,e);break;case 2:this.ctx.translate(n,e);break;case 3:this.ctx.translate(n,0);break;case 4:break;default:console.log({status:"ERROR",message:"invalid quadrant passed, please specify 0, 1, 2, 3 or 4. See docs for more info"})}return this.ctx.transform(1,0,0,-1,0,0),this}},{key:"centre",value:function(){var t=this.ctx.canvas.clientHeight,e=this.ctx.canvas.clientWidth;return this.ctx.translate(.5*e,.5*t),this}},{key:"rotate",value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},e=t.units,n=void 0===e?"rad":e,o=t.angle,i=void 0===o?Math.PI/2:o,r=t.code,s=void 0===r?function(){return console.log("rotated by: ".concat(i))}:r,c=n.toUpperCase();return"RAD"===c||"RADS"===c||"R"===c||"RADIANS"===c?(this.ctx.save(),this.ctx.rotate(i),s(),this.ctx.restore(),this):"DEG"===c||"DEGS"===c||"D"===c||"DEGREES"===c?(this.ctx.save(),this.ctx.rotate(i*(Math.PI/180)),s(),this.ctx.restore(),this):(console.log({status:"ERROR",message:'units not recognised, please specify "deg" or "rad"'}),this)}},{key:"boundX",value:function(t,e){return(this.pos.x>=e||this.pos.x<=t)&&(this.vel.x*=-1),this}},{key:"boundY",value:function(t,e){return(this.pos.y>=e||this.pos.y<=t)&&(this.vel.y*=-1),this}}]),t}()},/* 40 */
+value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:0,e=this.ctx.canvas.clientHeight,n=this.ctx.canvas.clientWidth;switch(t){case 0:this.ctx.translate(.5*n,.5*e);break;case 1:this.ctx.translate(0,e);break;case 2:this.ctx.translate(n,e);break;case 3:this.ctx.translate(n,0);break;case 4:break;default:console.log({status:"ERROR",message:"invalid quadrant passed, please specify 0, 1, 2, 3 or 4. See docs for more info"})}return this.ctx.transform(1,0,0,-1,0,0),this}},{key:"centre",value:function(){var t=this.ctx.canvas.clientHeight,e=this.ctx.canvas.clientWidth;return this.ctx.translate(.5*e,.5*t),this}},{key:"rotate",value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},e=t.units,n=void 0===e?"rad":e,o=t.angle,i=void 0===o?Math.PI/2:o,r=t.code,s=void 0===r?function(){return console.log("rotated by: ".concat(i))}:r,c=n.toUpperCase();return"RAD"===c||"RADS"===c||"R"===c||"RADIANS"===c?(this.ctx.save(),this.ctx.rotate(i),s(),this.ctx.restore(),this):"DEG"===c||"DEGS"===c||"D"===c||"DEGREES"===c?(this.ctx.save(),this.ctx.rotate(i*(Math.PI/180)),s(),this.ctx.restore(),this):(console.log({status:"ERROR",message:'units not recognised, please specify "deg" or "rad"'}),this)}},{key:"boundX",value:function(t,e){return(this.pos.x>=e||this.pos.x<=t)&&(this.vel.x*=-1),this}},{key:"boundY",value:function(t,e){return(this.pos.y>=e||this.pos.y<=t)&&(this.vel.y*=-1),this}},{key:"wrapX",value:function(t,e){return this.pos.x>=e?this.pos.x=t:this.pos.x<=t&&(this.pos.x=e),this}},{key:"wrapY",value:function(t,e){return this.pos.y>=e?this.pos.y=t:this.pos.y<=t&&(this.pos.y=e),this}}]),t}()},/* 40 */
 ,/* 41 */
 /***/
 function(t,e,n){"use strict";function o(t){return(o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}function i(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function r(t,e){for(var n=0;n<e.length;n++){var o=e[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(t,o.key,o)}}function s(t,e,n){return e&&r(t.prototype,e),n&&r(t,n),t}function c(t,e){return!e||"object"!==o(e)&&"function"!=typeof e?a(t):e}function a(t){if(void 0===t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return t}function u(t){return(u=Object.setPrototypeOf?Object.getPrototypeOf:function(t){return t.__proto__||Object.getPrototypeOf(t)})(t)}function h(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function");t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),e&&l(t,e)}function l(t,e){return(l=Object.setPrototypeOf||function(t,e){return t.__proto__=e,t})(t,e)}/* harmony export (binding) */
@@ -334,10 +341,12 @@ function(t,e,n){"use strict";/* harmony default export */
 e.a=function(){var t=new Date;return{millis:t.getMilliseconds(),seconds:t.getSeconds(),minutes:t.getMinutes(),hours:t.getHours(),day:t.getDate(),month:t.getMonth()+1,year:t.getFullYear(),today:t}}},/* 55 */
 /***/
 function(t,e,n){"use strict";/* harmony import */
-var o=n(53),i=n(54),r=n(56),s={convert:o.a,date:i.a,map:r.a};/* harmony default export */
+var o=n(53),i=n(54),r=n(56),s={_convert:o.a,_date:i.a,_map:r.a};/* harmony default export */
 e.a=s},/* 56 */
 /***/
-function(t,e,n){"use strict";/* harmony default export */
+function(t,e,n){"use strict";
+// range_1 = range to be mapped, range_2 = range to be mapped to
+/* harmony default export */
 e.a=function(t,e,n,o,i){
 // get the ranges passed in from minimum and maximum values
 var r=Math.abs(e-n),s=Math.abs(o-i),c=e<n?e:n,a=o<i?o:i;if(!(t-c<0))// return that same percentage [line20] value of second range

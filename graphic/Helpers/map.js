@@ -1,3 +1,4 @@
+// range_1 = range to be mapped, range_2 = range to be mapped to
 export default (value, range_1A, range_1B, range_2A, range_2B) => {
   // get the ranges passed in from minimum and maximum values
   let Diff_1 = Math.abs(range_1A - range_1B)

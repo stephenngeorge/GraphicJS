@@ -1,11 +1,11 @@
-import convert from './convert'
-import date from './date'
-import map from './map'
+import _convert from './convert'
+import _date from './date'
+import _map from './map'
 
 const helpers = {
-    convert,
-    date,
-    map
+    _convert,
+    _date,
+    _map
 }
 
 export default helpers

@@ -73,4 +73,14 @@ export default class Graphic {
     if (this.pos.y >= max || this.pos.y <= min) this.vel.y *= -1
     return this
   }
+  wrapX(min, max) {
+    if (this.pos.x >= max) this.pos.x = min
+    else if (this.pos.x <= min) this.pos.x = max
+    return this
+  }
+  wrapY(min, max) {
+    if (this.pos.y >= max) this.pos.y = min
+    else if (this.pos.y <= min) this.pos.y = max
+    return this
+  }
 }
