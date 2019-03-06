@@ -42,6 +42,18 @@ export default class Vector extends Graphic {
     this.y = Math.sin(ang) * hyp
     return this
   }
+  // limit vector values
+  limit(limiter) {
+    if (this.x > limiter) {
+      this.y = (this.y / this.x) * limiter
+      this.x = limiter
+    }
+    else if (this.y > limiter) {
+      this.x = (this.x / this.y) * limiter
+      this.y = limiter
+    }
+    return this
+  }
   /* ****
     DATA METHODS
   **** */
