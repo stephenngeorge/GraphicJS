@@ -1,13 +1,11 @@
-import Graphic from '../../Graphic'
-import Vector from '../../Globals/vector/vector.class'
+import Shape from '../Shape.class'
 
 import circle from '../circle/circle'
 
-export default class Point extends Graphic {
+export default class Point extends Shape {
   constructor(ctx, x, y) {
-    super()
+    super(x, y)
     this.ctx = ctx
-    this.pos = new Vector(x, y)
   }
   /* ****
     DESIGN METHODS

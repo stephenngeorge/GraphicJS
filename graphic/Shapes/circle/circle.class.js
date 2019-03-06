@@ -1,12 +1,9 @@
-import Graphic from '../../Graphic'
-import Vector from '../../Globals/vector/vector.class'
+import Shape from '../Shape.class'
 
-export default class Circle extends Graphic {
+export default class Circle extends Shape {
   constructor(ctx, x, y, r) {
-    super()
+    super(x, y)
     this.ctx = ctx
-    this.pos = new Vector(x, y)
-    this.vel = new Vector(0, 0)
     this.r = r
   }
   /* ****

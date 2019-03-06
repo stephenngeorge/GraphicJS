@@ -1,11 +1,9 @@
-import Graphic from '../../Graphic'
-import Vector from '../../Globals/vector/vector.class'
+import Shape from '../Shape.class'
 
-export default class Rect extends Graphic {
+export default class Rect extends Shape {
   constructor(ctx, x, y, width, height) {
-    super()
+    super(x, y)
     this.ctx = ctx
-    this.pos = new Vector(x, y)
     this.width = width
     this.height = height
   }

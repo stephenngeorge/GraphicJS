@@ -1,11 +1,9 @@
-import Graphic from '../../Graphic'
-import Vector from '../../Globals/vector/vector.class'
+import Shape from '../Shape.class'
 
-export default class Sector extends Graphic {
+export default class Sector extends Shape {
   constructor(ctx, x, y, r, angle, size) {
-    super()
+    super(x, y)
     this.ctx = ctx
-    this.pos = new Vector(x, y)
     this.r = r
     this.angle = angle
     this.size = size
