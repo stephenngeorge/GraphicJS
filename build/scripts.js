@@ -221,7 +221,7 @@ p.history.forEach(function(t){
 // set colour values based on pos co-ordinates
 var e=s._map(t.x,0,l,0,255),n=s._map(t.y,0,f,0,255);// draw circle with values determined above
 c.circle(h,t.x,t.y,8).draw("rgba(".concat(e,", ").concat(n,", 0, .6)"))});// randomly create vector to be added to ball position
-var t=Math.random();p.vel=t<=.25?i.vector(0,16):t<=.5?i.vector(16,0):t<=.75?i.vector(0,-16):i.vector(-16,0),// draw ball at new position
+var t=Math.random();p.vel=t<=1/8?i.vector(0,16):t<=.25?i.vector(16,16):t<=3/8?i.vector(16,0):t<=.5?i.vector(16,-16):t<=5/8?i.vector(0,-16):t<=.75?i.vector(-16,-16):t<=7/8?i.vector(-16,0):i.vector(-16,16),// draw ball at new position
 p.pos.add(p.vel),p.draw("#333").outline({weight:2,colour:"#fff"}).wrapX(0+p.r,l-p.r).wrapY(0+p.r,f-p.r)},10)},/* 19 */
 /***/
 function(t,e,n){"use strict";

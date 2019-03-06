@@ -38,10 +38,14 @@ structure.animate(() => {
     
     // randomly create vector to be added to ball position
     let dir = Math.random()
-    if (dir <= .25) walker.vel = globals.vector(0, unit * 2)
-    else if (dir <= .5) walker.vel = globals.vector(unit * 2, 0)
-    else if (dir <= .75) walker.vel = globals.vector(0, -unit * 2)
-    else walker.vel = globals.vector(-unit * 2, 0)
+    if (dir <= 1/8) walker.vel = globals.vector(0, unit * 2)
+    else if (dir <= 2/8) walker.vel = globals.vector(unit * 2, unit * 2)
+    else if (dir <= 3/8) walker.vel = globals.vector(unit * 2, 0)
+    else if (dir <= 4/8) walker.vel = globals.vector(unit * 2, -unit * 2)
+    else if (dir <= 5/8) walker.vel = globals.vector(0, -unit * 2)
+    else if (dir <= 6/8) walker.vel = globals.vector(-unit * 2, -unit * 2)
+    else if (dir <= 7/8) walker.vel = globals.vector(-unit * 2, 0)
+    else walker.vel = globals.vector(-unit * 2, unit * 2)
 
     // draw ball at new position
     walker.pos.add(walker.vel)
