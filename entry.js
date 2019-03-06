@@ -33,7 +33,7 @@ structure.animate(() => {
         let colourX = helpers._map(pos.x, 0, width, 0, 255)
         let colourY = helpers._map(pos.y, 0, height, 0, 255)
         // draw circle with values determined above
-        shapes.circle(c, pos.x, pos.y, unit).draw(`rgba(${colourX}, ${colourY}, 0, .6)`)
+        shapes.circle(c, pos.x, pos.y, unit).draw(`rgba(${colourX}, 0, ${colourY}, .6)`)
     })
     
     // randomly create vector to be added to ball position
@@ -48,8 +48,8 @@ structure.animate(() => {
     else walker.vel = globals.vector(-unit * 2, unit * 2)
 
     // draw ball at new position
-    walker.pos.add(walker.vel)
     walker
+        .move()
         .draw('#333')
         .outline({ weight: 2, colour: '#fff' })
         .wrapX(0 + walker.r, width - walker.r)

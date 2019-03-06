@@ -220,9 +220,9 @@ p.history.length>200&&p.history.shift(),// draw circle at each position in histo
 p.history.forEach(function(t){
 // set colour values based on pos co-ordinates
 var e=s._map(t.x,0,l,0,255),n=s._map(t.y,0,f,0,255);// draw circle with values determined above
-c.circle(h,t.x,t.y,8).draw("rgba(".concat(e,", ").concat(n,", 0, .6)"))});// randomly create vector to be added to ball position
+c.circle(h,t.x,t.y,8).draw("rgba(".concat(e,", 0, ").concat(n,", .6)"))});// randomly create vector to be added to ball position
 var t=Math.random();p.vel=t<=1/8?i.vector(0,16):t<=.25?i.vector(16,16):t<=3/8?i.vector(16,0):t<=.5?i.vector(16,-16):t<=5/8?i.vector(0,-16):t<=.75?i.vector(-16,-16):t<=7/8?i.vector(-16,0):i.vector(-16,16),// draw ball at new position
-p.pos.add(p.vel),p.draw("#333").outline({weight:2,colour:"#fff"}).wrapX(0+p.r,l-p.r).wrapY(0+p.r,f-p.r)},10)},/* 19 */
+p.move().draw("#333").outline({weight:2,colour:"#fff"}).wrapX(0+p.r,l-p.r).wrapY(0+p.r,f-p.r)},10)},/* 19 */
 /***/
 function(t,e,n){"use strict";
 // draw fill rectangle full size of canvas, colour default to light grey
@@ -361,7 +361,7 @@ e.a=function(t,e,n,r){return new o.a(t,e,n,r)}},/* 47 */
 function(t,e,n){"use strict";function o(t){return(o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}function r(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function i(t,e){for(var n=0;n<e.length;n++){var o=e[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(t,o.key,o)}}function s(t,e,n){return e&&i(t.prototype,e),n&&i(t,n),t}function c(t,e){return!e||"object"!==o(e)&&"function"!=typeof e?u(t):e}function u(t){if(void 0===t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return t}function a(t){return(a=Object.setPrototypeOf?Object.getPrototypeOf:function(t){return t.__proto__||Object.getPrototypeOf(t)})(t)}function h(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function");t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),e&&l(t,e)}function l(t,e){return(l=Object.setPrototypeOf||function(t,e){return t.__proto__=e,t})(t,e)}/* harmony export (binding) */
 n.d(e,"a",function(){return y});/* harmony import */
 var f=n(0),p=n(1),y=/*#__PURE__*/
-function(t){function e(t,n,o,i,s,u){var h;return r(this,e),h=c(this,a(e).call(this)),h.pos=new p.a(t,n),h.vel=new p.a(o,i),h.acc=new p.a(s,u),h}return h(e,t),s(e,[{key:"move",value:function(){return this.vel=this.vel.add(acc),this.pos=this.pos.add(vel),this}}]),e}(f.a)},/* 48 */
+function(t){function e(){var t,n=arguments.length>0&&void 0!==arguments[0]?arguments[0]:42,o=arguments.length>1&&void 0!==arguments[1]?arguments[1]:42,i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:0,s=arguments.length>3&&void 0!==arguments[3]?arguments[3]:0,u=arguments.length>4&&void 0!==arguments[4]?arguments[4]:0,h=arguments.length>5&&void 0!==arguments[5]?arguments[5]:0;return r(this,e),t=c(this,a(e).call(this)),t.pos=new p.a(n,o),t.vel=new p.a(i,s),t.acc=new p.a(u,h),t}return h(e,t),s(e,[{key:"move",value:function(){return this.vel.add(this.acc),this.pos.add(this.vel),this}}]),e}(f.a)},/* 48 */
 /***/
 function(t,e,n){"use strict";/* harmony import */
 var o=n(47);/* harmony default export */
