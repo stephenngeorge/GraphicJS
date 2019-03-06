@@ -15,20 +15,16 @@ const { c, width, height } = structure.canvas({
 })
 
 const ball = shapes.circle(c, width / 2, height / 2, 8)
-ball.vel = globals.vector(0, 0)
 
 let target = null
 document.getElementById('canvas').addEventListener('mousemove', e => {
     let mousePos = globals.mouse(c)._pos(e)
     target = globals.vector(mousePos.x, mousePos.y)
+    ball.acc = target.sub(ball.pos).mult(0.1)
 })
 
 structure.animate(() => {
     backgrounds.bgsolid(c)
-
-    if (target !== null) {
-        ball.pos = target
-    }
     ball
         .move()
         .draw()
