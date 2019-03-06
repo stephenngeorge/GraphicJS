@@ -239,8 +239,8 @@ var o=n(3);/* harmony default export */
 e.a=function(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=e.cols,r=void 0===n?20:n,i=e.rows,s=void 0===i?20:i;return new o.a(t,r,s)}},/* 22 */
 /***/
 function(t,e,n){"use strict";/* harmony import */
-var o=n(23),r=n(1),i=n(21),s=n(3),c={grid:i.a,vector:o.a,Classes:{Grid:s.a,Vector:r.a}};/* harmony default export */
-e.a=c},/* 23 */
+var o=n(21),r=n(3),i=n(50),s=n(49),c=n(23),u=n(1),a={grid:o.a,mouse:i.a,vector:c.a,Classes:{Grid:r.a,Mouse:s.a,Vector:u.a}};/* harmony default export */
+e.a=a},/* 23 */
 /***/
 function(t,e,n){"use strict";/* harmony import */
 var o=n(1);/* harmony default export */
@@ -365,5 +365,13 @@ function(t){function e(){var t,n=arguments.length>0&&void 0!==arguments[0]?argum
 /***/
 function(t,e,n){"use strict";/* harmony import */
 var o=n(47);/* harmony default export */
-e.a=function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:42,e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:42,n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:0,r=arguments.length>3&&void 0!==arguments[3]?arguments[3]:0,i=arguments.length>4&&void 0!==arguments[4]?arguments[4]:0,s=arguments.length>5&&void 0!==arguments[5]?arguments[5]:0;return new o.a(t,e,n,r,i,s)}}]);
+e.a=function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:42,e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:42,n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:0,r=arguments.length>3&&void 0!==arguments[3]?arguments[3]:0,i=arguments.length>4&&void 0!==arguments[4]?arguments[4]:0,s=arguments.length>5&&void 0!==arguments[5]?arguments[5]:0;return new o.a(t,e,n,r,i,s)}},/* 49 */
+/***/
+function(t,e,n){"use strict";function o(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function r(t,e){for(var n=0;n<e.length;n++){var o=e[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(t,o.key,o)}}function i(t,e,n){return e&&r(t.prototype,e),n&&r(t,n),t}/* harmony export (binding) */
+n.d(e,"a",function(){return s});var s=/*#__PURE__*/
+function(){function t(e){o(this,t),this.ctx=e,this.x=0,this.y=0}return i(t,[{key:"_pos",value:function(t){var e=this.ctx.canvas.getBoundingClientRect();return this.x=t.clientX-e.left,this.y=t.clientY-e.top,this}}]),t}()},/* 50 */
+/***/
+function(t,e,n){"use strict";/* harmony import */
+var o=n(49);/* harmony default export */
+e.a=function(t){return new o.a(t)}}]);
 //# sourceMappingURL=scripts.js.map
