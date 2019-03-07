@@ -9,28 +9,32 @@ const {
 
 // define canvas & get context, width & height variables
 const { c, width, height } = structure.canvas({
-    width: 400,
-    height: 400,
+    width: window.innerWidth,
+    height: window.innerHeight,
     id: 'canvas'
 })
 
-const ball = shapes.circle(c, width / 2, height / 2, 8)
-const planet = shapes.circle(c, width / 3, height / 3, 14)
-const bodies = [ball, planet]
+let balls = []
+for (let i = 0; i < 20; i++) {
+    let randomX = Math.ceil(Math.random() * width)
+    let randomY = Math.ceil(Math.random() * height)
+    let randomR = Math.ceil(Math.random() * 30)
+    balls.push(shapes.circle(c, randomX, randomY, randomR))
+}
 
-let target = null
 document.getElementById('canvas').addEventListener('mousemove', e => {
     let mousePos = globals.mouse(c)._pos(e)
-    target = globals.vector(mousePos.x, mousePos.y)
-    ball.acc = target.sub(ball.pos).mult(0.1)
-    planet.acc = globals.vector(1, 1)
+    let target = globals.vector(mousePos.x, mousePos.y)
+    balls.forEach(ball => {
+        ball.acc = target.copy().sub(ball.pos).mult(1 / ball.r)
+    })
 })
 
 structure.animate(() => {
-    backgrounds.bgsolid(c)
-    bodies.forEach(b => {
+    backgrounds.bgsolid(c, '#fff')
+    balls.forEach(b => {
         b.move()
-        .draw()
+        .draw(`rgba(200, 0, ${helpers._map(b.r, 1, 16, 0, 255)}, .5)`)
         .outline()
         .wrapX(0, width)
         .wrapY(0, height)

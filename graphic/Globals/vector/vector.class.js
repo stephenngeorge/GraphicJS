@@ -68,4 +68,11 @@ export default class Vector extends Graphic {
       return angle * (180 / Math.PI)
     }
   }
+
+  _mag(curr, dest) {
+    let xDiff = Math.abs(curr.x - dest.x)
+    let yDiff = Math.abs(curr.y - dest.y)
+
+    return Math.sqrt((xDiff * xDiff) + (yDiff * yDiff))
+  }
 }
