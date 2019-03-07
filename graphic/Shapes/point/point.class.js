@@ -1,11 +1,15 @@
 import Shape from '../Shape.class'
+import Vector from '../../Globals/vector/vector.class'
 
 import circle from '../circle/circle'
 
 export default class Point extends Shape {
-  constructor(ctx, x, y) {
-    super(x, y)
+  constructor(ctx, x, y, forces) {
+    super()
     this.ctx = ctx
+    this.pos = new Vector(x, y)
+    this.vel = new Vector(forces.vel.x, forces.vel.y)
+    this.acc = new Vector(forces.acc.x, forces.acc.y)
   }
   /* ****
     DESIGN METHODS

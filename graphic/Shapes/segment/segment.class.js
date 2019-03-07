@@ -1,14 +1,18 @@
 import Shape from '../Shape.class'
+import Vector from '../../Globals/vector/vector.class'
 
 export default class Segment extends Shape {
-  constructor(ctx, x, y, r, angle, chord) {
-    super(x, y)
+  constructor(ctx, x, y, r, angle, chord, forces) {
+    super()
     this.ctx = ctx
     this.r = r
     this.angle = angle
     this.endAngle = 2 * Math.asin(this.chord / (this.r * 2))
     this.chord = chord
     this.dir = false
+    this.pos = new Vector(x, y)
+    this.vel = new Vector(forces.vel.x, forces.vel.y)
+    this.acc = new Vector(forces.acc.x, forces.acc.y)
     if (this.chord > (this.r * 2)) {
       console.log({
         status: 'ERROR',

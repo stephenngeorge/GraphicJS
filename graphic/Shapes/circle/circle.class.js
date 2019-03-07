@@ -1,9 +1,13 @@
 import Shape from '../Shape.class'
+import Vector from '../../Globals/vector/vector.class'
 
 export default class Circle extends Shape {
-  constructor(ctx, x, y, r) {
-    super(x, y)
+  constructor(ctx, x, y, r, forces) {
+    super()
     this.ctx = ctx
+    this.pos = new Vector(x, y)
+    this.vel = new Vector(forces.vel.x, forces.vel.y)
+    this.acc = new Vector(forces.acc.x, forces.acc.y)
     this.r = r
   }
   /* ****
