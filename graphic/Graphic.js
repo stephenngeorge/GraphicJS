@@ -65,12 +65,12 @@ export default class Graphic {
   **** */
   // restrict possible movement of shapes on x axis
   boundX(min, max) {
-    if (this.pos.x >= max || this.pos.x <= min) this.vel.x *= -1
+    if (this.pos.x >= max || this.pos.x <= min) this.acc.x *= -1
     return this
   }
   // restrict possible movement of shapes on y axis
   boundY(min, max) {
-    if (this.pos.y >= max || this.pos.y <= min) this.vel.y *= -1
+    if (this.pos.y >= max || this.pos.y <= min) this.acc.y *= -1
     return this
   }
   wrapX(min, max) {

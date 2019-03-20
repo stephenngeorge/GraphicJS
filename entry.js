@@ -9,34 +9,24 @@ const {
 
 // define canvas & get context, width & height variables
 const { c, width, height } = structure.canvas({
-    width: window.innerWidth,
-    height: window.innerHeight,
     id: 'canvas'
 })
+backgrounds.bgsolid(c)
 
 let balls = []
-for (let i = 0; i < 20; i++) {
-    let randomX = Math.ceil(Math.random() * width)
-    let randomY = Math.ceil(Math.random() * height)
-    let randomR = Math.ceil(Math.random() * 30)
-    balls.push(shapes.circle(c, randomX, randomY, randomR))
-}
-
-document.getElementById('canvas').addEventListener('mousemove', e => {
+document.getElementById('canvas').addEventListener('click', e => {
     let mousePos = globals.mouse(c)._pos(e)
-    let target = globals.vector(mousePos.x, mousePos.y)
-    balls.forEach(ball => {
-        ball.acc = target.copy().sub(ball.pos).mult(1 / ball.r)
-    })
+    let ball = shapes.circle(c, mousePos.x, mousePos.y, 8)
+    ball.acc = globals.vector(0, 1)
+    balls.push(ball)
 })
 
 structure.animate(() => {
-    backgrounds.bgsolid(c, '#fff')
-    balls.forEach(b => {
-        b.move()
-        .draw(`rgba(200, 0, ${helpers._map(b.r, 1, 16, 0, 255)}, .5)`)
-        .outline()
-        .wrapX(0, width)
-        .wrapY(0, height)
+    backgrounds.bgsolid(c)
+
+    balls.forEach(ball => {
+        ball.move()
+        ball.draw()
+        ball.boundY(0, height)
     })
-}, 10)
+})
