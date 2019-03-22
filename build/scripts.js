@@ -225,7 +225,7 @@ var o=n(23),i=n(25),r=n(2),s=n(28),c=n(32),a=n(34),u=n(1),h=n(37),l=n(47),f=n(50
 e.a=y},/* 21 */
 /***/
 function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});/* harmony import */
-var o=n(20),i=o.a.backgrounds,r=o.a.globals,s=(o.a.helpers,o.a.shapes),c=o.a.structure,a=c.canvas({id:"canvas"}),u=a.c,h=(a.width,a.height);i.bgsolid(u);var l=[],f=r.vector(0,.1);document.getElementById("canvas").addEventListener("click",function(t){var e=r.mouse(u)._pos(t),n=Math.floor(12*Math.random()+8),o=s.circle(u,e.x,e.y,n);o.acc=r.vector(0,1),l.push(o)}),c.animate(function(){i.bgsolid(u),l.forEach(function(t){t.draw(),!1===t.static&&(t.applyForce(r.vector(f.x,t.r/4*f.y)),t.move(),t.bounceY(0+t.r,h-t.r,.8))})})},/* 22 */
+var o=n(20),i=o.a.backgrounds,r=o.a.globals,s=o.a.helpers,c=o.a.shapes,a=o.a.structure,u=a.canvas({id:"canvas"}),h=u.c,l=(u.width,u.height);i.bgsolid(h);var f=[],y=r.vector(0,.1);document.getElementById("canvas").addEventListener("click",function(t){var e=r.mouse(h)._pos(t),n=s._random({min:8,max:20}),o=c.circle(h,e.x,e.y,n);o.acc=r.vector(0,1),f.push(o)}),a.animate(function(){i.bgsolid(h),f.forEach(function(t){t.draw().outline(),!1===t.static&&(t.applyForce(r.vector(y.x,t.r/5*y.y)),t.move(),t.bounceY(0+t.r,l-t.r,t.r/30))})})},/* 22 */
 /***/
 function(t,e,n){"use strict";
 // draw fill rectangle full size of canvas, colour default to light grey
@@ -270,8 +270,8 @@ function(t,e,n){"use strict";/* harmony default export */
 e.a=function(){var t=new Date;return{millis:t.getMilliseconds(),seconds:t.getSeconds(),minutes:t.getMinutes(),hours:t.getHours(),day:t.getDate(),month:t.getMonth()+1,year:t.getFullYear(),today:t}}},/* 32 */
 /***/
 function(t,e,n){"use strict";/* harmony import */
-var o=n(30),i=n(31),r=n(33),s={_convert:o.a,_date:i.a,_map:r.a};/* harmony default export */
-e.a=s},/* 33 */
+var o=n(30),i=n(31),r=n(33),s=n(51),c={_convert:o.a,_date:i.a,_map:r.a,_random:s.a};/* harmony default export */
+e.a=c},/* 33 */
 /***/
 function(t,e,n){"use strict";
 // range_1 = range to be mapped, range_2 = range to be mapped to
@@ -363,5 +363,8 @@ return h(e,t),s(e,[{key:"align",value:function(){var t=arguments.length>0&&void 
 /***/
 function(t,e,n){"use strict";/* harmony import */
 var o=n(49);/* harmony default export */
-e.a=function(t,e,n,i){return new o.a(t,e,n,i)}}]);
+e.a=function(t,e,n,i){return new o.a(t,e,n,i)}},/* 51 */
+/***/
+function(t,e,n){"use strict";/* harmony default export */
+e.a=function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return 0===Object.keys(t).length?Math.random():t.hasOwnProperty("min")&&t.hasOwnProperty("max")?Math.floor(Math.random()*(t.max-t.min)+t.min):void console.log("Error: config object must have min and max properties")}}]);
 //# sourceMappingURL=scripts.js.map
