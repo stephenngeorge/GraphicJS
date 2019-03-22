@@ -225,7 +225,7 @@ var o=n(23),i=n(25),r=n(2),s=n(28),c=n(32),a=n(34),u=n(1),h=n(37),l=n(47),f=n(50
 e.a=y},/* 21 */
 /***/
 function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});/* harmony import */
-var o=n(20),i=o.a.backgrounds,r=o.a.globals,s=(o.a.helpers,o.a.shapes),c=o.a.structure,a=c.canvas({id:"canvas"}),u=a.c,h=(a.width,a.height);i.bgsolid(u);var l=[],f=r.vector(0,.2);document.getElementById("canvas").addEventListener("click",function(t){var e=r.mouse(u)._pos(t),n=s.circle(u,e.x,e.y,8);n.acc=r.vector(0,1),l.push(n)}),c.animate(function(){i.bgsolid(u),l.forEach(function(t){t.draw(),!1===t.static&&(t.applyForce(f),t.move(),t.bounceY(0+t.r,h-t.r,.8))})})},/* 22 */
+var o=n(20),i=o.a.backgrounds,r=o.a.globals,s=(o.a.helpers,o.a.shapes),c=o.a.structure,a=c.canvas({id:"canvas"}),u=a.c,h=(a.width,a.height);i.bgsolid(u);var l=[],f=r.vector(0,.1);document.getElementById("canvas").addEventListener("click",function(t){var e=r.mouse(u)._pos(t),n=Math.floor(12*Math.random()+8),o=s.circle(u,e.x,e.y,n);o.acc=r.vector(0,1),l.push(o)}),c.animate(function(){i.bgsolid(u),l.forEach(function(t){t.draw(),!1===t.static&&(t.applyForce(r.vector(f.x,t.r/4*f.y)),t.move(),t.bounceY(0+t.r,h-t.r,.8))})})},/* 22 */
 /***/
 function(t,e,n){"use strict";
 // draw fill rectangle full size of canvas, colour default to light grey
