@@ -225,7 +225,7 @@ var o=n(23),i=n(25),r=n(2),s=n(28),c=n(32),a=n(34),u=n(1),h=n(37),l=n(47),f=n(50
 e.a=y},/* 21 */
 /***/
 function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});/* harmony import */
-var o=n(20),i=o.a.backgrounds,r=o.a.globals,s=o.a.helpers,c=o.a.shapes,a=o.a.structure,u=a.canvas({id:"canvas"}),h=u.c,l=(u.width,u.height);i.bgsolid(h);var f=[],y=r.vector(0,.1);document.getElementById("canvas").addEventListener("click",function(t){var e=r.mouse(h)._pos(t),n=s._random({min:8,max:20}),o=c.circle(h,e.x,e.y,n);o.acc=r.vector(0,1),f.push(o)}),a.animate(function(){i.bgsolid(h),f.forEach(function(t){t.draw().outline(),!1===t.static&&(t.applyForce(r.vector(y.x,t.r/5*y.y)),t.move(),t.bounceY(0+t.r,l-t.r,t.r/30))})})},/* 22 */
+var o=n(20),i=o.a.backgrounds,r=o.a.globals,s=o.a.helpers,c=o.a.shapes,a=o.a.structure,u=a.canvas({id:"canvas"}),h=u.c,l=(u.width,u.height);i.bgsolid(h);var f=[],y=r.vector(0,.1);document.getElementById("canvas").addEventListener("click",function(t){var e=r.mouse(h)._pos(t),n=s._random({min:8,max:16}),o=c.circle(h,e.x,e.y,n);o.acc=r.vector(0,1),f.push(o)}),a.animate(function(){i.bgsolid(h),f.forEach(function(t){t.draw().outline(),!1===t.static&&(t.applyForce(r.vector(y.x,t.r/5*y.y)),t.move(),t.bounceY(0+t.r,l-t.r,.8))})})},/* 22 */
 /***/
 function(t,e,n){"use strict";
 // draw fill rectangle full size of canvas, colour default to light grey

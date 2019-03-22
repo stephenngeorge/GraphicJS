@@ -17,7 +17,7 @@ let balls = []
 let gravity = globals.vector(0, .1)
 document.getElementById('canvas').addEventListener('click', e => {
     let mousePos = globals.mouse(c)._pos(e)
-    let randomR = helpers._random({ min: 8, max: 20 })
+    let randomR = helpers._random({ min: 8, max: 16 })
     let ball = shapes.circle(c, mousePos.x, mousePos.y, randomR)
     ball.acc = globals.vector(0, 1)
     balls.push(ball)
