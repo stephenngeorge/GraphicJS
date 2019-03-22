@@ -1,11 +1,6 @@
-export default (range = {}) => {
-    if (Object.keys(range).length === 0) {
-        return Math.random()
-    }
-    else {
-        if (range.hasOwnProperty('min') && range.hasOwnProperty('max')) {
-            return Math.floor(Math.random() * (range.max - range.min) + range.min)
-        }
-        else console.log('Error: config object must have min and max properties')
+export default (min = null, max = null) => {
+    if (min === null || max === null) return Math.random()
+    else if (min !== null && max !== null) {
+        return Math.floor(Math.random() * (Math.abs(max - min)) + min)
     }
 }
