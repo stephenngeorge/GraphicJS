@@ -14,6 +14,7 @@ const { c, width, height } = structure.canvas({
 backgrounds.bgsolid(c)
 
 let balls = []
+let gravity = globals.vector(0, .2)
 document.getElementById('canvas').addEventListener('click', e => {
     let mousePos = globals.mouse(c)._pos(e)
     let ball = shapes.circle(c, mousePos.x, mousePos.y, 8)
@@ -25,8 +26,11 @@ structure.animate(() => {
     backgrounds.bgsolid(c)
 
     balls.forEach(ball => {
-        ball.move()
         ball.draw()
-        ball.boundY(0, height)
+        if (ball.static === false) {
+            ball.applyForce(gravity)
+            ball.move()
+            ball.bounceY(0 + ball.r, height - ball.r, .8)
+        }
     })
 })
