@@ -96,24 +96,24 @@ export default class Graphic {
   // similar to boundX & boundY but simulates collision by reducing acceleration
   bounceX(min, max, multiplier) {
     if (this.pos.x >= max) {
-      if (this.acc.x > 0) this.acc.x *= -multiplier
-      if (Math.abs(this.acc.x) < .1) this.static = true 
+      if (this.vel.x > 0) this.vel.x *= -multiplier
+      if (Math.abs(this.vel.x) < .1) this.static = true 
     }
     else if (this.pos.x <= min) {
-      if (this.acc.x < 0) this.acc.x *= -multiplier
-      if (Math.abs(this.acc.x) < .1) this.static = true
+      if (this.vel.x < 0) this.vel.x *= -multiplier
+      if (Math.abs(this.vel.x) < .1) this.static = true
     }
     return this
   }
 
   bounceY(min, max, multiplier) {
     if (this.pos.y >= max) {
-      if (this.acc.y > 0) this.acc.y *= -multiplier
-      if (Math.abs(this.acc.y) < .1) this.static = true
+      if (this.vel.y > 0) this.vel.y *= -multiplier
+      if (Math.abs(this.vel.y) < .1) this.static = true
     }
     else if (this.pos.y <= min) {
-      if (this.acc.y < 0) this.acc.y *= -multiplier
-      if (Math.abs(this.acc.y) < .1) this.static = true
+      if (this.vel.y < 0) this.vel.y *= -multiplier
+      if (Math.abs(this.vel.y) < .1) this.static = true
     }
     return this
   }

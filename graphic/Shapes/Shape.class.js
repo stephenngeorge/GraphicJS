@@ -8,8 +8,9 @@ export default class Shape extends Graphic {
     }
 
     move() {
-        this.vel = this.acc
+        this.vel = this.vel.add(this.acc)
         this.pos = this.pos.add(this.vel)
+        this.acc.mult(0)
         return this
     }
 
