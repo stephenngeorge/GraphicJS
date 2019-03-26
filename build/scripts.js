@@ -237,15 +237,15 @@ t.move(),// prevent ball from going beyond the bounds of the canvas
 // inverse acceleration is 4/5 of original vector.y
 t.bounceY(0+t.r,f-t.r,.8),t.bounceX(0+t.r,l-t.r,.8))})})},/* 22 */
 /***/
-function(t,e,n){"use strict";
+function(t,e,n){"use strict";/* harmony import */
+var o=n(14);
 // draw fill rectangle full size of canvas, colour default to light grey
-function o(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"#e7e7e7",o=arguments.length>2&&void 0!==arguments[2]?arguments[2]:"top-left",i=t.canvas.clientWidth,s=t.canvas.clientHeight,c=null;switch(o){case"top-left":c=n.i(r.a)(t,0,0,i,s).draw(e);break;case"centre":c=n.i(r.a)(t,.5*-i,.5*-s,i,s).draw(e);break;default:console.log({status:"ERROR",message:'the anchor you have passed is not recognised, please select "top-left" or "centre"'})}return c}/* harmony export (immutable) */
-e.a=o;/* harmony import */
-var r=n(14)},/* 23 */
+/* harmony default export */
+e.a=function(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"#e7e7e7",r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:"top-left",i=t.canvas.clientWidth,s=t.canvas.clientHeight,c=null;switch(r){case"top-left":c=n.i(o.a)(t,0,0,i,s).draw(e);break;case"centre":c=n.i(o.a)(t,.5*-i,.5*-s,i,s).draw(e);break;default:console.log({status:"ERROR",message:'the anchor you have passed is not recognised, please select "top-left" or "centre"'})}return c}},/* 23 */
 /***/
 function(t,e,n){"use strict";/* harmony import */
-var o=n(22),r={bgsolid:o.a};/* harmony default export */
-e.a=r},/* 24 */
+var o=n(53),r=n(22),i={bglinear:o.a,bgsolid:r.a};/* harmony default export */
+e.a=i},/* 24 */
 /***/
 function(t,e,n){"use strict";/* harmony import */
 var o=n(3);/* harmony default export */
@@ -379,5 +379,9 @@ function(t,e,n){"use strict";/* harmony default export */
 e.a=function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:null,e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:null;return null===t||null===e?Math.random():null!==t&&null!==e?Math.floor(Math.random()*Math.abs(e-t)+t):void 0}},/* 52 */
 /***/
 function(t,e,n){"use strict";function o(t){return(o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}/* harmony default export */
-e.a=function(t,e){if(Array.isArray(t)){if("string"==typeof e)return t.indexOf(e)>=0;if(Array.isArray(e))return e.map(function(e){return t.indexOf(e)>=0});console.log("Error: argument must be of type string or array")}else if("object"===o(t)){if("string"==typeof e)return t.hasOwnProperty(e);if(Array.isArray(e))return e.map(function(e){return t.hasOwnProperty(e)});console.log("Error: argument must be of type string or array")}else console.log("Error: method must be called on array or object")}}]);
+e.a=function(t,e){if(Array.isArray(t)){if("string"==typeof e)return t.indexOf(e)>=0;if(Array.isArray(e))return e.map(function(e){return t.indexOf(e)>=0});console.log("Error: argument must be of type string or array")}else if("object"===o(t)){if("string"==typeof e)return t.hasOwnProperty(e);if(Array.isArray(e))return e.map(function(e){return t.hasOwnProperty(e)});console.log("Error: argument must be of type string or array")}else console.log("Error: method must be called on array or object")}},/* 53 */
+/***/
+function(t,e,n){"use strict";/* harmony import */
+var o=n(14),r=n(27);/* harmony default export */
+e.a=function(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:n.i(r.a)(0,0),i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:n.i(r.a)(400,0),s=arguments.length>3&&void 0!==arguments[3]?arguments[3]:{0:"#FFC0CB",1:"#808080"},c=arguments.length>4&&void 0!==arguments[4]?arguments[4]:"top-left",a=t.canvas.clientWidth,u=t.canvas.clientHeight,h=t.createLinearGradient(e.x,e.y,i.x,i.y);Object.entries(s).forEach(function(t){h.addColorStop(t[0],t[1])});var l=null;switch(c){case"top-left":l=n.i(o.a)(t,0,0,a,u).draw(h);break;case"centre":l=n.i(o.a)(t,.5*-a,.5*-u,a,u).draw(h)}return l}}]);
 //# sourceMappingURL=scripts.js.map
