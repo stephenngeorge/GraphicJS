@@ -17,6 +17,8 @@ export default (ctx, start = vector(0, 0), end = vector(400, 0), colorStops = { 
         case 'centre':
             bg = rect(ctx, -canvasWidth * .5, -canvasHeight * .5, canvasWidth, canvasHeight).draw(gradient)
             break
+        default:
+            bg = rect(ctx, 0, 0, canvasWidth, canvasHeight).draw(gradient)
     }
 
     return bg
